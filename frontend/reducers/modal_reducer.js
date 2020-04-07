@@ -1,10 +1,10 @@
-import { OPEN_AUTH_MODAL, CLOSE_AUTH_MODAL } from '../actions/auth_modal_actions';
+import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
 
 export default function authModalReducer(state = {}, action) {
     switch (action.type) {
-        case OPEN_AUTH_MODAL:
+        case OPEN_MODAL:
             return action.modal;
-        case CLOSE_AUTH_MODAL:
+        case CLOSE_MODAL:
             return null;
         default:
             return state;
