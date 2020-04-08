@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
     render() {
         const emailField = this.props.signedUp ? null : 
             <>
-                <label>Username:<input type="text"
+                <label>Email:<input type="text"
                     value={this.state.email}
                     onChange={this.update('email')}
                     />
