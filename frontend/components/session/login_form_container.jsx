@@ -4,23 +4,23 @@ import { closeModal, openModal } from '../../actions/modal_actions';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
-const mapStateToProps = ({ errors }) => {
+const mapStateToProps = (state) => {
     return {
-        errors: errors.session,
-        formType: 'Sign In',
+        errors: state.errors.session,
+        formHeader: 'Sign into JaeCloud',
         signedUp: true
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        processForm: (user) => dispatch(login(user)),
+        processForm: user => dispatch(login(user)),
         otherForm: (
             <button onClick={() => dispatch(openModal('signup'))}>
                 Create Account
             </button>
         ),
-        closeModal, openModal: () => dispatch(closeModal, openModal())
+        closeModal: () => dispatch(closeModal())
     };
 };
 

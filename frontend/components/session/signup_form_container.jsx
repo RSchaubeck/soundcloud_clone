@@ -7,7 +7,7 @@ import React from 'react';
 const mapStateToProps = (state) => {
     return {
         errors: state.errors.session,
-        formType: "Create Account",
+        formHeader: "Create JaeCloud account",
         signedUp: false
     }
 }

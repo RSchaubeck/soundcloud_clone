@@ -38,37 +38,34 @@ class SessionForm extends React.Component {
     render() {
         const emailField = this.props.signedUp ? null : 
             <>
-                <label>Email:<input type="text"
+                <input type="text"
                     value={this.state.email}
                     onChange={this.update('email')}
-                    />
-                </label><br />
+                    placeholder="Your e-mail address"
+                />
+                <br />
             </>;
 
         return (
             <div className="session-form-container">
-                <span onClick={this.props.closeModal} className="close-session-form">
-                    X
-                </span>
                 <form onSubmit={this.handleSubmit} className="session-form-box">
-                    {this.renderErrors()}
                     <div className="session-form">
+                        <h2>{this.props.formHeader}</h2>
                         {emailField}
-                        <label>Username:
                         <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
-                            />
-                        </label>
+                                placeholder="Your username"
+                        />
                         <br />
-                        <label>Password:
                         <input type="password"
                                 value={this.state.password}
-                                onChange={this.update('password')}           
-                            />
-                        </label>
+                                onChange={this.update('password')}  
+                                placeholder="Your password"         
+                        />
                         <br />
-                        <input className="session-submit" type="submit" value={this.props.formType} />
+                        {this.renderErrors()}
+                        <input className="session-submit" type="submit" value="Continue"/>
                     </div>
                 </form>
             </div>
