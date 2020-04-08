@@ -11,6 +11,8 @@ class SessionForm extends React.Component {
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
+        this.loginDemo = this.loginDemo.bind(this);
     }
 
     handleSubmit(e) {
@@ -20,7 +22,12 @@ class SessionForm extends React.Component {
     }
 
     update(type) {
-        return e => this.setState({ [type]: e.target.value })
+        return e => this.setState({ [type]: e.target.value });
+    }
+
+    loginDemo(e) {
+        e.preventDefault();
+        this.setState({username: "DemoAcc", password: "password"});
     }
 
     renderErrors() {
@@ -66,6 +73,8 @@ class SessionForm extends React.Component {
                         <br />
                         {this.renderErrors()}
                         <input className="session-submit" type="submit" value="Continue"/>
+                        <br />
+                        <button className="demo-login" onClick={this.loginDemo}>Fill fields with demo info</button>
                     </div>
                 </form>
             </div>

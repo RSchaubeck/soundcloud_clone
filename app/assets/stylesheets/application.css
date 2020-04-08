@@ -55,8 +55,13 @@
     text-decoration: none;
     color: white;
     font-size: 30px;
-    padding-top: 5px;
+    padding-top: 6px;
     background-color: #f50;
+    padding-right: 7px;
+ }
+
+ .logo i {
+    padding: 0 7px 0 7px;
  }
 
  .signup-button {
