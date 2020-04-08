@@ -41,14 +41,28 @@
     border-radius: 3px;
     color: white;
     font-size: 14px;
+    background-color: #333;
  }
 
- .login-button {
-     background-color: #333;
+ button.login-button {
      border: 1px gray solid;
  }
- .signup-button {
+
+ button.signup-button {
     border: 1px #f50 solid;
+    background-color: #f50;
+ }
+
+ div .profile-button {
+    align-self: center;
+    font-size: 16px;
+    margin-top: 16px;
+    text-decoration: none;
+    color: rgb(197, 197, 197);
+ }
+
+ div .profile-button:hover {
+   color: white;
  }
 
  .logo {
@@ -62,10 +76,6 @@
 
  .logo i {
     padding: 0 7px 0 7px;
- }
-
- .signup-button {
-    background-color: #f50;
  }
 
  /* MODAL STYLES */
@@ -149,4 +159,14 @@
  .session-form ul li {
     color: rgb(255, 0, 0);
     margin-bottom: 10px;
+ }
+
+ .demo-login {
+    width: 60%;
+    align-self: center;
+    border-radius: 4px;
+    background-color: white;
+    border: 1px white solid;
+    color: #f50;
+    text-decoration: underline;
  }

@@ -53,6 +53,11 @@ class SessionForm extends React.Component {
                 <br />
             </>;
 
+        const demoButton = this.props.signedUp ? 
+            <button className="demo-login" onClick={this.loginDemo}>Fill fields with demo account info</button> 
+            : 
+            null;
+
         return (
             <div className="session-form-container">
                 <form onSubmit={this.handleSubmit} className="session-form-box">
@@ -74,7 +79,7 @@ class SessionForm extends React.Component {
                         {this.renderErrors()}
                         <input className="session-submit" type="submit" value="Continue"/>
                         <br />
-                        <button className="demo-login" onClick={this.loginDemo}>Fill fields with demo info</button>
+                        {demoButton}
                     </div>
                 </form>
             </div>
