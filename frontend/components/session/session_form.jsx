@@ -10,9 +10,12 @@ class SessionForm extends React.Component {
             password: ""
         };
 
+        
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
+        this.loginDemoAcc = this.loginDemoAcc.bind(this);
     }
+
 
     handleSubmit(e) {
         e.preventDefault();
@@ -24,10 +27,10 @@ class SessionForm extends React.Component {
         return e => this.setState({ [type]: e.target.value });
     }
 
-    loginDemo(e) {
+    loginDemoAcc(e) {
         e.preventDefault();
-        const user = Object.assign({ username: "DemoAcc", password: "password" });
-        this.props.login(user).then(this.props.closeModal);
+        const user = Object.assign({}, { username: "DemoAcc", password: "password" });
+        this.props.processForm(user).then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -54,7 +57,7 @@ class SessionForm extends React.Component {
             </>;
 
         const demoButton = this.props.signedUp ? 
-            <button className="demo-login" onClick={this.loginDemo}>Log in with demo account</button> 
+            <button className="demo-login" onClick={this.loginDemoAcc}>Log in with demo account</button> 
             : 
             null;
 
