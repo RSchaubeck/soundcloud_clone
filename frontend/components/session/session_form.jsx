@@ -12,7 +12,6 @@ class SessionForm extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
-        this.loginDemo = this.loginDemo.bind(this);
     }
 
     handleSubmit(e) {
@@ -27,7 +26,8 @@ class SessionForm extends React.Component {
 
     loginDemo(e) {
         e.preventDefault();
-        this.setState({username: "DemoAcc", password: "password"});
+        const user = Object.assign({ username: "DemoAcc", password: "password" });
+        this.props.login(user).then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
             </>;
 
         const demoButton = this.props.signedUp ? 
-            <button className="demo-login" onClick={this.loginDemo}>Fill fields with demo account info</button> 
+            <button className="demo-login" onClick={this.loginDemo}>Log in with demo account</button> 
             : 
             null;
 
@@ -80,7 +80,18 @@ class SessionForm extends React.Component {
                         <input className="session-submit" type="submit" value="Continue"/>
                         <br />
                         {demoButton}
+                        <a id="help" href="/">Need help?</a>
+                        <br />
                     </div>
+                    <p id="disclaimer">
+                    We may use your email and devices for updates and tips on <br />
+                    JaeCloud's products and services, and for activities notifications. <br />
+                    You can unsubscribe for free at any time in your notification <br />
+                    settings.
+                    <br /><br />
+                    We may use information you provide us in order to show you <br />
+                    targeted ads as described in our <a id="privacy" href="/">Privacy Policy</a>
+                    </p>
                 </form>
             </div>
         );
