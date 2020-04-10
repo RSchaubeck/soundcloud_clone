@@ -223,6 +223,8 @@
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
+   animation-name: modal-slide-down;
+   animation-duration: 0.7s;
  }
 
  .close-session-form {
@@ -250,3 +252,14 @@
     color: #f50;
     text-decoration: underline;
  }
+  
+@keyframes modal-slide-down {
+  from {
+    top: -100%;
+    bottom: -100%;
+  }
+  to {
+    top: 50%;
+    bottom: 10%;
+  }
+}
