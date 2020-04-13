@@ -21,8 +21,10 @@
  .nav-button {
     height: 55%;
     align-self: center;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
     border-radius: 3px;
     color: white;
     font-size: 12px;
@@ -63,10 +65,10 @@
     padding: 0 7px 0 7px;
  }
 
- .clicked {
+ div a.clicked {
     background-color: rgb(27, 27, 27);
     border-radius: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: 5px solid rgb(27, 27, 27);
+    border-top: 5px solid rgb(27, 27, 27);
+    border-bottom: 5px solid rgb(27, 27, 27);
+    color: white;
  }

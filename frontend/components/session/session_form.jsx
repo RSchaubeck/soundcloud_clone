@@ -80,7 +80,7 @@ class SessionForm extends React.Component {
                         />
                         <br />
                         {this.renderErrors()}
-                        <input className="session-submit" type="submit" value="Continue"/>
+                        <input className="input-submit" type="submit" value="Continue"/>
                         <br />
                         {demoButton}
                         <a id="help" href="/">Need help?</a>
