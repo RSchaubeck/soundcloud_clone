@@ -9,6 +9,7 @@ const Navbar = ({ currentUser, logout, openModal }) => {
                     <NavLink to="/" className="logo"><i className="fab fa-mixcloud"></i>JaeCloud</NavLink>
                 </div>
                 <div className="right-nav">
+                    <NavLink className="nav-upload-link" to={`/upload`}>Upload</NavLink>
                     <NavLink to="/" className="profile-button nav-button">{currentUser.username}</NavLink>              
                     <button className="logout-button nav-button" onClick={logout}>Log Out</button>
                 </div>
