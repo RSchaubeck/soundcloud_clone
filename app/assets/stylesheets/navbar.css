@@ -1,0 +1,72 @@
+
+ .navbar-container {
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    font-family: Verdana, Tahoma, sans-serif;
+ }
+
+ .left-nav {
+    display: flex;
+ }
+
+ .right-nav{
+    display: flex;
+ }
+
+ .nav-button {
+    height: 55%;
+    align-self: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+ }
+
+ button.login-button {
+     border: 1px gray solid;
+     background-color: transparent;
+     padding: 0 15px 0 15px;
+ }
+
+ button.signup-button {
+    border: 1px #f50 solid;
+    background-color: #f50;
+ }
+
+ div .links {
+    align-self: center;
+    font-size: 13px;
+    padding-top: 10px;
+    color: rgb(197, 197, 197);
+ }
+
+ div .links:hover {
+   color: white;
+ }
+
+ .logo {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    background-color: #f50;
+    padding-right: 7px;
+ }
+
+ .logo i {
+    padding: 0 7px 0 7px;
+ }
+
+ .clicked {
+    background-color: rgb(27, 27, 27);
+    border-radius: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 5px solid rgb(27, 27, 27);
+ }
