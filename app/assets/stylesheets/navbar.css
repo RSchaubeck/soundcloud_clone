@@ -5,13 +5,22 @@
     position: fixed;
     background-color: #333;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-content: center;
     font-family: Verdana, Tahoma, sans-serif;
  }
 
  .left-nav {
     display: flex;
+ }
+
+ .middle-nav {
+    display: flex;
+    height: 60%;
+    width: 410px;
+    align-self: center;
+    margin-left: -120px;
+    margin-right: -150px;
  }
 
  .right-nav{
@@ -57,12 +66,12 @@
     text-decoration: none;
     color: white;
     font-size: 30px;
-    background-color: #f50;
-    padding-right: 7px;
+    background: rgb(255,85,0);
+    background: linear-gradient(0deg, rgba(255,85,0,1) 0%, rgba(255,117,0,1) 100%);
  }
 
  .logo i {
-    padding: 0 7px 0 7px;
+    padding: 0 10px 0 10px;
  }
 
  div a.clicked {
@@ -71,4 +80,38 @@
     border-top: 5px solid rgb(27, 27, 27);
     border-bottom: 5px solid rgb(27, 27, 27);
     color: white;
+ }
+
+ .left-nav-links {
+    padding: 15px 30px 0px 30px;
+    border-right: 1px solid black;
+    color: rgb(197, 197, 197);
+    font-size: 13px;
+    text-decoration: none;
+ }
+
+ i.fas {
+    font-size: 16px;
+ }
+
+ div.right-nav .upgrade-link {
+   color: #f50;
+ }
+
+ div.right-nav .upgrade-link:hover {
+   color: rgb(255,117,0);
+ }
+
+ .middle-nav input {
+   border-radius: 4px;
+   border: 0px;
+   font-size: 14px;
+   width: 100%;
+ }
+
+ .fa-search {
+   position: relative;
+   right: 28px;
+   top: 5px;
+   color: gray;
  }

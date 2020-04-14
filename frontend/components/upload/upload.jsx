@@ -41,6 +41,14 @@ class Upload extends React.Component {
         return (
             <>
                 <Navbar />
+                <div className="full-page-container"></div>
+                <div className="upload-links">
+                    <Link to="/upload">Upload</Link>
+                    <Link to="/upload">Your Tracks</Link>
+                    <Link to="/upload">Stats</Link>
+                    <Link to="/upload">Pro Plans</Link>
+                    <Link to="/upload">Pulse</Link>
+                </div>
                 <div className="upload-container">
                     <div id="drop-zone" onDrop={this.dropHandler} onDragOver={this.dragOverHandler}>
                         <div className="drop-box">
