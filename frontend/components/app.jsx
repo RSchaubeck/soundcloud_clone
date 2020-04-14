@@ -1,4 +1,3 @@
-import GreetingContainer from "./greeting/greeting_container";
 import React from 'react';
 import Modal from './modal/modal';
 import Splash from './splash/splash_container';
