@@ -1,11 +1,16 @@
+.full-navbar-container {
+   display: flex;
+   width: auto;
+}
 
  .navbar-container {
     width: 100%;
     height: 45px;
     position: fixed;
+    z-index: 200;
     background-color: #333;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-content: center;
     font-family: Verdana, Tahoma, sans-serif;
  }
@@ -71,7 +76,7 @@
  }
 
  .logo i {
-    padding: 0 10px 0 10px;
+    padding: 3px 10px 0 10px;
  }
 
  div a.clicked {
@@ -92,6 +97,7 @@
 
  i.fas {
     font-size: 16px;
+    padding-left: 15px;
  }
 
  div.right-nav .upgrade-link {
@@ -106,12 +112,14 @@
    border-radius: 4px;
    border: 0px;
    font-size: 14px;
-   width: 100%;
+   width: 120%;
+   margin-left: -55px;
+   margin-right: -20px;
  }
 
  .fa-search {
    position: relative;
-   right: 28px;
+   right: 18px;
    top: 5px;
    color: gray;
  }

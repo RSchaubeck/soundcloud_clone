@@ -6,7 +6,7 @@ import Upload from "./upload/upload_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
-    <div>
+    <div id="main-container">
         <Modal />
         <AuthRoute exact path="/" component={Splash} />
         <ProtectedRoute exact path="/discover" component={Discover} />
