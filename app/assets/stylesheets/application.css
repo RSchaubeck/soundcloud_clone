@@ -24,7 +24,7 @@
     background-color: rgb(238, 238, 236);
 }
 
-#foo {
+#main-container {
     display: flex;
     height: max-content;
 }
