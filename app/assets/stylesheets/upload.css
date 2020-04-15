@@ -11,7 +11,7 @@
     height: 400px;
     background-color: #fff;
     text-align: center;
-    margin-top: 175px;
+    margin-top: 155px;
     border-radius: 2px;
     border: 1px solid #f2f2f2;
     box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
@@ -49,16 +49,55 @@
  }
 
  .upload-links {
-     display: inline-block;
+     display: flex;
+     justify-content: start;
+     align-content: flex-start;
      position: relative;
      top: 50px;
      border-bottom: 1px solid #d1d1d1;
-     width: 100%;
-     padding-left: 215px;
  }
 
  .upload-links a {
      text-decoration: none;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-size: 13px;
      color: black;
-     padding: 10px 20px 10px 20px;
+     padding: 15px 12px 15px 12px;
  }
+ .upload-links a:hover {
+     border-bottom: 1px solid black;
+ }
+
+  .upload-links a:active {
+     border-bottom: 1px solid #f50;
+     color: #f50;
+ }
+
+ .upload-footer {
+     display: flex;
+     flex-direction: column;
+     margin-top: 25px;
+     margin-left: 235px;
+ }
+
+ .upload-footer p {
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 25px;
+ }
+
+  .upload-footer span {
+      border-bottom: 1px solid #f2f2f2;
+      width: 77%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+
+  #last-foot {
+      margin-bottom: 85px;
+  }
+
+  .upload-clicked {
+      border-bottom: 1px solid #f50;
+      color: #f50;
+  }

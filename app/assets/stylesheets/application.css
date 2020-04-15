@@ -14,4 +14,35 @@
  *= require_self
  */
 
+#root {
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    background-color: rgb(238, 238, 236);
+}
+
+#foo {
+    display: flex;
+    height: max-content;
+}
+
+ .full-page-container {
+   height: 100%;
+   display: flex;
+   width: 87%;
+   flex-direction: column;
+   justify-content: center;
+   align-content: center;
+   margin-left: 95px;
+   background-color: white;
+ }
+
+ a {
+     text-decoration: none;
+     color: #38d;
+ }
+
  

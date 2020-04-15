@@ -1,4 +1,3 @@
-import GreetingContainer from "./greeting/greeting_container";
 import React from 'react';
 import Modal from './modal/modal';
 import Splash from './splash/splash_container';
@@ -7,7 +6,7 @@ import Upload from "./upload/upload_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
-    <div>
+    <div id="foo">
         <Modal />
         <AuthRoute exact path="/" component={Splash} />
         <ProtectedRoute exact path="/discover" component={Discover} />
