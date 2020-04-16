@@ -25,7 +25,7 @@ export const fetchSongs = () => dispatch => (
     ))
 );
 
-export const updateSong = song => dispatch => (
+export const uploadSong = song => dispatch => (
     SongAPIUtil.uploadSong(song).then(song => (
         dispatch(receiveSong(song))
     ))

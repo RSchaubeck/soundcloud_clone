@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import UploadPage from "./upload_page";
-import { updateSong } from "../../actions/song_actions";
+import { uploadSong } from "../../actions/song_actions";
 
 const mapStateToProps = ({ session, entities: { users } }) => {
     return {
@@ -10,7 +10,7 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        uploadSong: (formData) => dispatch(updateSong(formData)),
+        uploadSong: (formData) => dispatch(uploadSong(formData)),
     };
 };
 

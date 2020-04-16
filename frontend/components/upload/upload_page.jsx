@@ -35,7 +35,7 @@ class UploadPage extends React.Component {
 
         if (this.state.songFile) {
             formData.append('song[song]', this.state.songFile);
-            this.props.uploadTrack(formData)
+            this.props.uploadSong(formData)
         }
     }
 
