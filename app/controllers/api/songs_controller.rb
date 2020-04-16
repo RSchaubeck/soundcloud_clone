@@ -2,7 +2,7 @@ class Api::SongsController < ApplicationController
     def index
         @songs = Song.all 
         if @songs
-            render 'api/songs/index'
+            render :index
         else
             render json: ["No songs to display"], status: 404
         end
@@ -40,6 +40,6 @@ class Api::SongsController < ApplicationController
     private
 
     def song_params
-        params.require(:song).permit(:title, :genre, :description, :tags, :artist_id)
+        params.require(:song).permit(:title, :genre, :description, :tags, :artist_id, :song)
     end
 end

@@ -30,13 +30,13 @@ class UploadPage extends React.Component {
         formData.append('song[genre]', this.state.genre);
         formData.append('song[description]', this.state.description);
         formData.append('song[tags]', this.state.tags);
-        // formData.append('song[song]', this.state.songFile);
+        formData.append('song[song]', this.state.songFile);
 
 
-        if (this.state.songFile) {
-            formData.append('song[song]', this.state.songFile);
+    //     if (this.state.songFile) {
+    //         formData.append('song[song]', this.state.songFile);
             this.props.uploadSong(formData)
-        }
+    //     }
     }
 
     handleUploadSong(e) {
