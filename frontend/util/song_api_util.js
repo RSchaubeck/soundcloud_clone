@@ -10,11 +10,13 @@ export const fetchSongs = () =>
         url: "/api/songs",
     });
 
-export const uploadSong = (song) =>
+export const uploadSong = (songData) =>
     $.ajax({
         method: "POST",
         url: "/api/songs",
-        data: { song }
+        data: songData,
+        contentType: false,
+        processData: false
     });
 
 export const updateSong = (song) =>

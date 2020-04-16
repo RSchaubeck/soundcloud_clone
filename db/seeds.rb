@@ -9,6 +9,12 @@
 User.destroy_all
 Song.destroy_all
 
-demoUser = User.create(username: "DemoAcc", email: "demo_account@email.com", password: "password");
+require 'open-uri'
 
-song1 = Song.create(title: "JazzyFrench", genre: "jazz", description: "This song is snazzy and a lil bit jazzy", artist_id: demoUser.id);
+demoUser = User.create(username: "DemoAcc", email: "demo_account@email.com", password: "password")
+
+song1 = Song.create(title: "JazzyFrench", genre: "jazz", description: "This song is snazzy and a lil bit jazzy", artist_id: demoUser.id)
+
+file = open("https://jaecloud-seeds.s3.us-east-2.amazonaws.com/bensound-jazzyfrenchy.mp3")
+
+song1.song.attach(io: file, filename: 'jazzy.mp3')

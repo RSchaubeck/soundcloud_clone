@@ -26,7 +26,7 @@ class Navbar extends React.Component {
                     <i className="fas fa-bell nav-button links"></i>   
                     <i className="fas fa-envelope nav-button links"></i>
                     <i className="fas fa-ellipsis-h nav-button links"></i>          
-                    {/* <button className="logout-button nav-button" onClick={this.props.logout}>Log Out</button> */}
+                    <button className="logout-button nav-button" onClick={this.props.logout}>Log Out</button>
                 </div>
             </header>   
             :

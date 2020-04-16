@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from './modal/modal';
 import Splash from './splash/splash_container';
 import Discover from './discover/discover_container';
-import Upload from "./upload/upload_container";
+import Upload from "./upload/upload_page_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (

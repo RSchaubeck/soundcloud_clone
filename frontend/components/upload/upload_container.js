@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Upload from './upload';
+import Upload from './upload_box';
 import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
