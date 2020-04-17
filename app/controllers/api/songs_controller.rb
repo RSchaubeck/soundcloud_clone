@@ -10,6 +10,7 @@ class Api::SongsController < ApplicationController
 
     def show
         @song = Song.find(params[:id])
+        @artist = User.find(@song.artist_id)
         if @song 
             render :show
         else

@@ -31,7 +31,7 @@ class UploadPage extends React.Component {
         formData.append('song[description]', this.state.description);
         formData.append('song[tags]', this.state.tags);
         formData.append('song[song]', this.state.songFile);
-
+        debugger
 
     //     if (this.state.songFile) {
     //         formData.append('song[song]', this.state.songFile);
@@ -43,14 +43,17 @@ class UploadPage extends React.Component {
         e.preventDefault();
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
+        // debugger
         if(file) {
             reader.readAsDataURL(file);
             reader.onloadend = () =>
                 this.setState({
+                    title: file.name,
                     songUrl: reader.result,
                     songFile: file,
                     status: "loaded"
                 });
+                // debugger
         } else {
             this.setState({ songUrl: "", songFile: null });
         }
@@ -114,7 +117,7 @@ class UploadPage extends React.Component {
                             <p><span className="required">*</span>Required Fields</p>
                             <div className="upload-buttons">
                                 <button>Cancel</button>
-                                <button onClick={this.handleSubmit}>Save</button>
+                                <Link to={`/users/${this.props.currentUser.id}`} onClick={this.handleSubmit}>Save</Link>
                             </div>
                         </div>
                     </div>
@@ -144,38 +147,3 @@ class UploadPage extends React.Component {
 }
 
 export default UploadPage;
-
-
-// {/* <>
-//     <div className="upload-container">
-//         <div className="song-image-container">
-//             {/* picture here */}
-//         </div>
-//         <div className="song-options">
-//             <label>
-//                 Title<span>*</span>
-//             </label>
-//             <input
-//                 type="text"
-//                 placeholder={title}
-//                 onChange={update("title")}
-//                 value={title}
-//             />
-//                 <label>Genre</label>
-//                 <select name="genres" id="genres" defaultValue="None">
-//                     <option value="None">None</option>
-//                     <option value="custom" onChange={update("genre")}>Custom</option>
-//                     <option value="Alternative-Rock" onChange={update("genre")}>Alternative Rock</option>
-//                     <option value="Ambient" onChange={update("genre")}>Ambient</option>
-//                     <option value="Classical" onChange={update("genre")}>Classical</option>
-//                     <option value="Country" onChange={update("genre")}>Country</option>
-//                     <option value="Dance-and-EDM" onChange={update("genre")}>Dance & EDM</option>
-//                     <option value="dancehall" onChange={update("genre")}>Dancehall</option>
-//                 </select>
-//             <label>Description</label>
-//             <textarea
-//                 placeholder="Describe your track"
-//                 onChange={update("description")}
-//             />
-//         </div>
-// </> */}

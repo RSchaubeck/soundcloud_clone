@@ -22,7 +22,7 @@ class Navbar extends React.Component {
                 <div className="right-nav">
                     <NavLink to="/" className="upgrade-link nav-button links">Upgrade</NavLink>
                     <NavLink className={`nav-upload-link nav-button links ${this.props.rel_hash === "#/upload" ? "clicked" : null}`} to={`/upload`}>Upload</NavLink>
-                    <NavLink to="/" className="profile-button nav-button links">{this.props.currentUser.username}</NavLink> 
+                    <NavLink to={`/users/${this.props.currentUser.id}`} className="profile-button nav-button links">{this.props.currentUser.username}</NavLink> 
                     <i className="fas fa-bell nav-button links"></i>   
                     <i className="fas fa-envelope nav-button links"></i>
                     <i className="fas fa-ellipsis-h nav-button links"></i>          

@@ -2,7 +2,8 @@ import React from 'react';
 import Modal from './modal/modal';
 import Splash from './splash/splash_container';
 import Discover from './discover/discover_container';
-import Upload from "./upload/upload_page_container";
+import Upload from './upload/upload_page_container';
+import Profile from './profile/profile-container'
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
@@ -11,6 +12,7 @@ const App = () => (
         <AuthRoute exact path="/" component={Splash} />
         <ProtectedRoute exact path="/discover" component={Discover} />
         <ProtectedRoute exact path="/upload" component={Upload} />
+        <ProtectedRoute exact path="/users/:userId" component={Profile} />
     </div>
 );
 
