@@ -117,7 +117,7 @@ class UploadPage extends React.Component {
                             <p><span className="required">*</span>Required Fields</p>
                             <div className="upload-buttons">
                                 <button>Cancel</button>
-                                <Link to={`/users/${this.props.currentUser.id}`} onClick={this.handleSubmit}>Save</Link>
+                                <button onClick={this.handleSubmit}>Save</button>
                             </div>
                         </div>
                     </div>
