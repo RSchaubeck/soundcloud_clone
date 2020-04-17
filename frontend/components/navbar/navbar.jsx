@@ -26,13 +26,13 @@ class Navbar extends React.Component {
                     <i className="fas fa-bell nav-button links"></i>   
                     <i className="fas fa-envelope nav-button links"></i>
                     <i className="fas fa-ellipsis-h nav-button links"></i>          
-                    <button className="logout-button nav-button" onClick={this.props.logout}>Log Out</button>
+                    {/* <button className="logout-button nav-button" onClick={this.props.logout}>Log Out</button> */}
                 </div>
             </header>   
             :
             <header className="navbar-container">
                 <div className="left-nav">
-                    <NavLink to="/" className="logo"><i className="fab fa-mixcloud"></i>JaeCloud</NavLink>
+                    <NavLink to="/" className="logo"><i className="fab fa-mixcloud"></i></NavLink>
                     <NavLink to="/" className="left-nav-links">Home</NavLink>
                     <NavLink to="/" className="left-nav-links">Stream</NavLink>
                     <NavLink to="/" className="left-nav-links">Library</NavLink>

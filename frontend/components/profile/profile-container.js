@@ -3,10 +3,10 @@ import { fetchUser } from "../../actions/user_actions";
 import { fetchSongs } from "../../actions/song_actions";
 import Profile from "./profile";
 
-const mapStateToProps = ({ session, entities: { users }, entities: { songs } }) => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        currentUser: users[session.id],
-        songs: Object.values(songs)
+        currentUser: state.entities.users[ownProps.match.params.userId],
+        songs: Object.values(state.entities.songs)
     };
 };
 

@@ -26,11 +26,11 @@ class Profile extends React.Component {
                     </div>
                 </>
             )
-        })
+        });
         
         return(
             <>
-                <Navbar />
+                <Navbar currentUser={this.props.currentUser}/>
                 <div className="full-page-container">
                     <div className="profile-head">
                         <span>D</span>
@@ -54,20 +54,35 @@ class Profile extends React.Component {
                                 <p>Highlight your best tracks and playlists: put them in Spotlight so that your audience will find them first when they visit your profile.</p>
                             </div>
                             <div className="recent-songs">
-                                <h2>Recent</h2>
-                                {songList}
+                                <div className="profile-image">
+                                    <h2>Recent</h2>
+                                    <span>D</span>
+                                </div>
+                                <div className="play-song">
+                                    <div className="song-info">
+                                        <p>{this.props.currentUser.username}</p>
+                                        <p>Bensound - Jazzyfrenchy.mp3</p>
+                                    </div>
+                                    <div className="song-actions">
+                                        <button><i className="fas fa-share-square"></i>Share</button>
+                                        <button><i className="fas fa-pen"></i>Edit</button>
+                                        <button><i className="far fa-play-circle"></i>Add to Next up</button>
+                                        <button><i className="fas fa-ellipsis-h"></i>More</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div className="sidebar">
                                 <div className="user-stats">
-                                    <span>Followers <br />146</span>
-                                    <span>Following <br />157</span>
-                                    <span>Tracks<br />12</span>
+                                    <p className="stats">Followers <br /><span>146</span><br /></p>
+                                    <p className="stats">Following <br /><span>157</span><br /></p>
+                                    <p className="stats">Tracks<br /><span>1</span><br /></p>
                                 </div>
                                 <div className="go-mobile">
                                     <p>Go mobile</p>
-                                <p><a href="https://github.com/RSchaubeck">Github</a> ⁃ Privacy ⁃ Cookies ⁃ Imprint ⁃ Creator Resources ⁃ Blog ⁃ Charts ⁃ Popular searches</p>
-                                <p id="last-foot"><Link to="/">Language:</Link> English (US)</p>                            
+                                    <p className="haejun">Thanks Haejun</p>
+                                    <p><a href="https://github.com/RSchaubeck">Github</a> ⁃ Privacy ⁃ Cookies ⁃ Imprint ⁃ Creator Resources ⁃ Blog ⁃ Charts ⁃ Popular searches</p>
+                                    <p id="last-foot"><Link to="/">Language:</Link> English (US)</p>                            
                                 </div>
                         </div>
                     </div>
