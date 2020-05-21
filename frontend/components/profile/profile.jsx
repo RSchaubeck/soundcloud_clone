@@ -61,7 +61,7 @@ class Profile extends React.Component {
                                 <div className="play-song">
                                     <div className="song-info">
                                         <p>{this.props.currentUser.username}</p>
-                                        <p>Bensound - Jazzyfrenchy.mp3</p>
+                                        <p>{this.props.currentUser.songs}</p>
                                     </div>
                                     <div className="song-actions">
                                         <button><i className="fas fa-share-square"></i>Share</button>
