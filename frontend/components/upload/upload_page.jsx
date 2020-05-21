@@ -31,12 +31,15 @@ class UploadPage extends React.Component {
         formData.append('song[description]', this.state.description);
         formData.append('song[tags]', this.state.tags);
         formData.append('song[song]', this.state.songFile);
-        debugger
+        // debugger
 
     //     if (this.state.songFile) {
     //         formData.append('song[song]', this.state.songFile);
-            this.props.uploadSong(formData)
+            // this.props.uploadSong(formData)
     //     }
+        this.props.uploadSong(formData).then(({ song }) => {
+            this.props.history.push(`/songs/${song.song.id}`);
+        });
     }
 
     handleUploadSong(e) {

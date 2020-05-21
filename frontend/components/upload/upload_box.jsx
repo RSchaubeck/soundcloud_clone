@@ -15,13 +15,13 @@ class UploadBox extends React.Component {
         if (e.dataTransfer.items) {
             for (var i = 0; i < e.dataTransfer.items.length; i++) {
                 if (e.dataTransfer.items[i].kind === 'file') {
-                    var file = e.dataTransfer.items[i].getAsFile();
-                    console.log('... file[' + i + '].name = ' + file.name);
+                    var file = e.dataTransfer.items[i].getAsFile();  
+                    console.log('... file[' + i + '].name = ' + file.name);  
                 }
             }
         } else {
             for (var i = 0; i < e.dataTransfer.files.length; i++) {
-                console.log('... file[' + i + '].name = ' + e.dataTransfer.files[i].name);
+                console.log('... file[' + i + '].name = ' + e.dataTransfer.files[i].name);  
             }
         }
     }
@@ -33,9 +33,9 @@ class UploadBox extends React.Component {
     handleClick(e){
         e.preventDefault();
         const targetInput = document.getElementById('file');
-        targetInput.click();
-    }
-
+        targetInput.click();  
+    }  
+  
     render() {
         return (
             <>
