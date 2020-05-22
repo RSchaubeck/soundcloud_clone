@@ -33,13 +33,11 @@ class UploadPage extends React.Component {
         formData.append('song[song]', this.state.songFile);
         // debugger
 
-    //     if (this.state.songFile) {
-    //         formData.append('song[song]', this.state.songFile);
-            // this.props.uploadSong(formData)
-    //     }
-        this.props.uploadSong(formData).then(({ song }) => {
-            this.props.history.push(`/songs/${song.song.id}`);
-        });
+        if (this.state.songFile) {
+            formData.append('song[song]', this.state.songFile);
+            this.props.uploadSong(formData)
+        }
+
     }
 
     handleUploadSong(e) {
@@ -58,12 +56,12 @@ class UploadPage extends React.Component {
                 });
                 // debugger
         } else {
-            this.setState({ songUrl: "", songFile: null });
+            this.setState({ songUrl: null, songFile: null });
         }
     }
 
     update(type) {
-        return e => this.setState({ [type]: e.target.value });
+        return e => this.setState({ [type]: e.currentTarget.value });
     }
     
 
