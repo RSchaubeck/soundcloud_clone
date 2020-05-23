@@ -31,32 +31,28 @@ class UploadPage extends React.Component {
         formData.append('song[description]', this.state.description);
         formData.append('song[tags]', this.state.tags);
         formData.append('song[song]', this.state.songFile);
-        // debugger
+        
 
         if (this.state.songFile) {
             formData.append('song[song]', this.state.songFile);
-            this.props.uploadSong(formData)
         }
 
     }
 
     handleUploadSong(e) {
-        e.preventDefault();
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
-        // debugger
+        reader.onloadend = () =>
+            this.setState({
+                title: file.name,
+                songUrl: reader.result,
+                songFile: file,
+                status: "loaded"
+            });
         if(file) {
             reader.readAsDataURL(file);
-            reader.onloadend = () =>
-                this.setState({
-                    title: file.name,
-                    songUrl: reader.result,
-                    songFile: file,
-                    status: "loaded"
-                });
-                // debugger
         } else {
-            this.setState({ songUrl: null, songFile: null });
+            this.setState({ songUrl: "", songFile: null });
         }
     }
 

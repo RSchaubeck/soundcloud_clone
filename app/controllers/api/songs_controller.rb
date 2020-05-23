@@ -22,7 +22,7 @@ class Api::SongsController < ApplicationController
         @song = Song.new(song_params)
         @artist = User.find(@song.artist_id)
         if @song.save
-            render `api/users/#{@artist.id}`
+            render `api/songs/show`
         else
             render json: @song.errors.full_messages, status: 422
         end  

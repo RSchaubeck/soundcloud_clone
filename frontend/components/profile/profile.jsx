@@ -7,25 +7,33 @@ class Profile extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.props.fetchSongs();
+    }
+
     render() {
+        const currentUser = this.props.currentUser;
+        
         const songList = this.props.songs.map((song) => {
-            return (
-                <>
-                    <div className="profile-image">
-                        <span>D</span>
-                    </div>
-                    <div className="song-info">
-                        <p>{this.props.currentUser.username}</p>
-                        <p>{song.title}</p>
-                    </div>
-                    <div className="song-actions">
-                        <button><i class="fas fa-share-square"></i>Share</button>
-                        <button><i class="fas fa-pen"></i>Edit</button>
-                        <button><i class="far fa-play-circle"></i>Add to Next up</button>
-                        <button><i class="fas fa-ellipsis-h"></i>More</button>
-                    </div>
-                </>
-            )
+            if (song.artist_id === currentUser.id) {
+                return (
+                    <>
+                        <div className="profile-image">
+                            <span>D</span>
+                        </div>
+                        <div className="song-info">
+                            <p>{currentUser.username}</p>
+                            <p>{song.title}</p>
+                        </div>
+                        <div className="song-actions">
+                            <button><i class="fas fa-share-square"></i>Share</button>
+                            <button><i class="fas fa-pen"></i>Edit</button>
+                            <button><i class="far fa-play-circle"></i>Add to Next up</button>
+                            <button><i class="fas fa-ellipsis-h"></i>More</button>
+                        </div>
+                    </>
+                )
+            }
         });
         
         return(
@@ -54,14 +62,15 @@ class Profile extends React.Component {
                                 <p>Highlight your best tracks and playlists: put them in Spotlight so that your audience will find them first when they visit your profile.</p>
                             </div>
                             <div className="recent-songs">
-                                <div className="profile-image">
+                                {songList}
+                                {/* <div className="profile-image">
                                     <h2>Recent</h2>
                                     <span>D</span>
                                 </div>
                                 <div className="play-song">
                                     <div className="song-info">
                                         <p>{this.props.currentUser.username}</p>
-                                        <p>{this.props.currentUser.songs}</p>
+                                        <p>{}</p>
                                     </div>
                                     <div className="song-actions">
                                         <button><i className="fas fa-share-square"></i>Share</button>
@@ -69,7 +78,7 @@ class Profile extends React.Component {
                                         <button><i className="far fa-play-circle"></i>Add to Next up</button>
                                         <button><i className="fas fa-ellipsis-h"></i>More</button>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         <div className="sidebar">
