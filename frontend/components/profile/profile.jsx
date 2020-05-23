@@ -17,21 +17,23 @@ class Profile extends React.Component {
         const songList = this.props.songs.map((song) => {
             if (song.artist_id === currentUser.id) {
                 return (
-                    <>
+                    <div className="song-wrapper">
                         <div className="profile-image">
                             <span>D</span>
                         </div>
-                        <div className="song-info">
-                            <p>{currentUser.username}</p>
-                            <p>{song.title}</p>
+                        <div className="play-song">
+                            <div className="song-info">
+                                <p>{currentUser.username}</p>
+                                <p>{song.title}</p>
+                            </div>
+                            <div className="song-actions">
+                                <button><i className="fas fa-share-square"></i>Share</button>
+                                <button><i className="fas fa-pen"></i>Edit</button>
+                                <button><i className="far fa-play-circle"></i>Add to Next up</button>
+                                <button><i className="fas fa-ellipsis-h"></i>More</button>
+                            </div>
                         </div>
-                        <div className="song-actions">
-                            <button><i class="fas fa-share-square"></i>Share</button>
-                            <button><i class="fas fa-pen"></i>Edit</button>
-                            <button><i class="far fa-play-circle"></i>Add to Next up</button>
-                            <button><i class="fas fa-ellipsis-h"></i>More</button>
-                        </div>
-                    </>
+                    </div>
                 )
             }
         });
@@ -63,22 +65,6 @@ class Profile extends React.Component {
                             </div>
                             <div className="recent-songs">
                                 {songList}
-                                {/* <div className="profile-image">
-                                    <h2>Recent</h2>
-                                    <span>D</span>
-                                </div>
-                                <div className="play-song">
-                                    <div className="song-info">
-                                        <p>{this.props.currentUser.username}</p>
-                                        <p>{}</p>
-                                    </div>
-                                    <div className="song-actions">
-                                        <button><i className="fas fa-share-square"></i>Share</button>
-                                        <button><i className="fas fa-pen"></i>Edit</button>
-                                        <button><i className="far fa-play-circle"></i>Add to Next up</button>
-                                        <button><i className="fas fa-ellipsis-h"></i>More</button>
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
                         <div className="sidebar">
