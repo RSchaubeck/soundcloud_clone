@@ -3,7 +3,8 @@ import Modal from './modal/modal';
 import Splash from './splash/splash_container';
 import Discover from './discover/discover_container';
 import Upload from './upload/upload_page_container';
-import Profile from './profile/profile-container'
+import Profile from './profile/profile-container';
+import SongPlayer from './song_player/song_player';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 
 const App = () => (
@@ -13,6 +14,7 @@ const App = () => (
         <ProtectedRoute exact path="/discover" component={Discover} />
         <ProtectedRoute exact path="/upload" component={Upload} />
         <ProtectedRoute exact path="/users/:userId" component={Profile} />
+        {/* <SongPlayer /> */}
     </div>
 );
 

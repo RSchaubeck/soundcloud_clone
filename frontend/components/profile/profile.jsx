@@ -1,30 +1,43 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Navbar from '../navbar/navbar';
+import SongPlayer from '../song_player/song_player';
 
 class Profile extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            currentTrack: ""
+        }
+
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchSongs();
     }
 
+    handleClick(e) {
+        this.setState({
+            currentTrack: e._dispatchInstances.key
+        })
+        // <SongPlayer songUrl={e._dispatchInstances.key} />
+    }
+
     render() {
         const currentUser = this.props.currentUser;
-        
+
         const songList = this.props.songs.map((song) => {
             if (song.artist_id === currentUser.id) {
                 return (
-                    <div className="song-wrapper">
+                    <div className="song-wrapper" key={song.id}>
                         <div className="profile-image">
                             <span>D</span>
                         </div>
                         <div className="play-song">
                             <div className="song-info">
                                 <div>
-                                    <button><i className="orange far fa-play-circle"></i></button>
+                                    <button key={song.songUrl} onClick={this.handleClick}><i className="orange far fa-play-circle"></i></button>
                                 </div>
                                 <div>
                                     <p>{currentUser.username}</p>
@@ -87,6 +100,7 @@ class Profile extends React.Component {
                         </div>
                     </div>
                 </div>
+                <SongPlayer songUrl={this.state.currentTrack}/>
             </>
         )
     }
