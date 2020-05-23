@@ -130,6 +130,16 @@
      margin-left: 20px;
  }
 
+ .song-info {
+     display: flex;
+     flex-direction: row;
+ }
+
+ .song-info button {
+     background-color: transparent;
+     border: 0px;
+ }
+
  .song-info p:first-child {
      color: #999;
      font-size: 12px;
@@ -139,6 +149,12 @@
  .song-info p:last-child {
      font-size: 15px;
      line-height: 1.2;
+ }
+
+ i.orange {
+     color: #f50;
+     font-size: 36px;
+     margin-right: 10px;
  }
 
  .song-actions button {

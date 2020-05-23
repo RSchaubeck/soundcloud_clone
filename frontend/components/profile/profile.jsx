@@ -23,8 +23,13 @@ class Profile extends React.Component {
                         </div>
                         <div className="play-song">
                             <div className="song-info">
-                                <p>{currentUser.username}</p>
-                                <p>{song.title}</p>
+                                <div>
+                                    <button><i className="orange far fa-play-circle"></i></button>
+                                </div>
+                                <div>
+                                    <p>{currentUser.username}</p>
+                                    <p>{song.title}</p>
+                                </div>
                             </div>
                             <div className="song-actions">
                                 <button><i className="fas fa-share-square"></i>Share</button>
@@ -71,7 +76,7 @@ class Profile extends React.Component {
                                 <div className="user-stats">
                                     <p className="stats">Followers <br /><span>146</span><br /></p>
                                     <p className="stats">Following <br /><span>157</span><br /></p>
-                                    <p className="stats">Tracks<br /><span>1</span><br /></p>
+                                    <p className="stats">Tracks<br /><span>{songList.length}</span><br /></p>
                                 </div>
                                 <div className="go-mobile">
                                     <p>Go mobile</p>
