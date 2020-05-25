@@ -16,25 +16,30 @@ const Splash = ({ currentUser, openModal, logout }) => {
     }
 
     return(
-        <div className="splash-container">
-            <div className="full-splash">
-                <div className="left-splash">
-                    <i className="fab fa-mixcloud"></i>
-                    <span to="/" className="splash-name">JAECLOUD</span>
-                </div>   
-                <div className="right-splash">
-                    {splashDisplay}
-                    
-                    <a href="/">For Creators</a>
-                </div>  
-            </div>           
-            <div className="splash-info">
-                <h2>Discover more with JaeCloud Go+</h2>
-                <br />
-                <p>JaeCloud Go+ lets you listen offline, ad-free, with over 150 <br /> million tracks — and growing.</p>
-                <button className="splash-offer">Start uploading today</button>
-            </div>           
-        </div>
+        <>
+            <div className="splash-container">
+                <div className="full-splash">
+                    <div className="left-splash">
+                        <i className="fab fa-mixcloud"></i>
+                        <span to="/" className="splash-name">JAECLOUD</span>
+                    </div>   
+                    <div className="right-splash">
+                        {splashDisplay}
+                        
+                        <a href="/">For Creators</a>
+                    </div>  
+                </div>           
+                <div className="splash-info">
+                    <h2>Discover more with JaeCloud Go+</h2>
+                    <br />
+                    <p>JaeCloud Go+ lets you listen offline, ad-free, with over 150 <br /> million tracks — and growing.</p>
+                    <button className="splash-offer">Start uploading today</button>
+                </div>          
+            </div>
+            <div>
+                <h2>Hear what's trending for free it the royalty free music community </h2>
+            </div>
+        </>    
     )
     }
 

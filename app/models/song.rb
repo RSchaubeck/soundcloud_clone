@@ -6,4 +6,6 @@ class Song < ApplicationRecord
         class_name: :User
 
     has_one_attached :song
+
+    has_one_attached :photo
 end

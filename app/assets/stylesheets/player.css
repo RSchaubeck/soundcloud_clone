@@ -3,3 +3,7 @@
     position: fixed;
     width: 100%;
 }
+
+.song-controls audio {
+    height: 50px;
+}

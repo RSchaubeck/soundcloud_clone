@@ -14,12 +14,16 @@ class UploadPage extends React.Component {
             tags: "",
             status: "",
             songFile: null,
-            songUrl: ""
+            songUrl: "",
+            photoFile: null,
+            photoUrl: ""
         }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUploadSong = this.handleUploadSong.bind(this);
+    this.handleUploadPhoto = this.handleUploadPhoto.bind(this);
     this.update = this.update.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     }
 
     handleSubmit(e) {
@@ -30,13 +34,20 @@ class UploadPage extends React.Component {
         formData.append('song[genre]', this.state.genre);
         formData.append('song[description]', this.state.description);
         formData.append('song[tags]', this.state.tags);
-        formData.append('song[song]', this.state.songFile);
-        
+        formData.append('song[photo]', this.state.photoFile);
 
         if (this.state.songFile) {
             formData.append('song[song]', this.state.songFile);
         }
 
+        $.ajax({
+            url: '/api/songs',
+            method: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false
+        });
+    
     }
 
     handleUploadSong(e) {
@@ -56,9 +67,30 @@ class UploadPage extends React.Component {
         }
     }
 
+    handleUploadPhoto(e) {
+        const reader = new FileReader();
+        const file = e.currentTarget.files[0];
+        reader.onloadend = () =>
+            this.setState({
+                songUrl: reader.result,
+                songFile: file,
+            });
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            this.setState({ photoUrl: "", photoFile: null });
+        }
+    }
+
     update(type) {
         return e => this.setState({ [type]: e.currentTarget.value });
     }
+
+    handleClick(e) {
+        e.preventDefault();
+        const targetInput = document.getElementById('photo-file');
+        targetInput.click();
+    } 
     
 
     render() {
@@ -71,7 +103,14 @@ class UploadPage extends React.Component {
                     <div className="upload-options">
                         <div className="full-song-info">
                             <div className="song-image-container">
-                                picture here
+                                <button className="upload-photo" onClick={this.handleClick}><i className="fas fa-camera"></i>Upload image</button>
+                                <input
+                                    type="file"
+                                    id="photo-file"
+                                    name="photo-file"
+                                    accept={"image/*"}
+                                    onChange={this.handleUploadPhoto}
+                                />
                             </div>
                             <div className="song-options">
                                 <label>

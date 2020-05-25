@@ -30,7 +30,9 @@
 
 #main-container {
     display: flex;
+    flex-direction: column;
     height: max-content;
+    align-items: center;
 }
 
  .full-page-container {

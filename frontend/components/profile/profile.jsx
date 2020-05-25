@@ -21,7 +21,6 @@ class Profile extends React.Component {
         this.setState({
             currentTrack: e._dispatchInstances.key
         })
-        // <SongPlayer songUrl={e._dispatchInstances.key} />
     }
 
     render() {
