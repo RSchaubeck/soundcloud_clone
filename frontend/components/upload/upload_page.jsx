@@ -15,8 +15,8 @@ class UploadPage extends React.Component {
             status: "",
             songFile: null,
             songUrl: "",
-            photoFile: null,
-            photoUrl: ""
+            // photoFile: null,
+            // photoUrl: ""
         }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,7 +34,7 @@ class UploadPage extends React.Component {
         formData.append('song[genre]', this.state.genre);
         formData.append('song[description]', this.state.description);
         formData.append('song[tags]', this.state.tags);
-        formData.append('song[photo]', this.state.photoFile);
+        // formData.append('song[photo]', this.state.photoFile);
 
         if (this.state.songFile) {
             formData.append('song[song]', this.state.songFile);
@@ -47,10 +47,11 @@ class UploadPage extends React.Component {
             contentType: false,
             processData: false
         });
-    
+
+        this.props.history.push(`/users/${this.props.currentUser.id}`)
     }
 
-    handleUploadSong(e) {
+    handleUploadSong(e) { 
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
         reader.onloadend = () =>
@@ -103,14 +104,14 @@ class UploadPage extends React.Component {
                     <div className="upload-options">
                         <div className="full-song-info">
                             <div className="song-image-container">
-                                <button className="upload-photo" onClick={this.handleClick}><i className="fas fa-camera"></i>Upload image</button>
+                                {/* <button className="upload-photo" onClick={this.handleClick}><i className="fas fa-camera"></i>Upload image</button>
                                 <input
                                     type="file"
                                     id="photo-file"
                                     name="photo-file"
                                     accept={"image/*"}
                                     onChange={this.handleUploadPhoto}
-                                />
+                                /> */}
                             </div>
                             <div className="song-options">
                                 <label>
