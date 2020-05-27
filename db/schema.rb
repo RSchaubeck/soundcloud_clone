@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_14_134055) do
+ActiveRecord::Schema.define(version: 2020_05_27_224237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_134055) do
     t.string "genre"
     t.string "description"
     t.string "tags"
+    t.integer "likes", default: 0
     t.index ["artist_id"], name: "index_songs_on_artist_id"
   end
 
