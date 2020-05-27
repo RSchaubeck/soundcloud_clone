@@ -4,6 +4,24 @@ import { NavLink } from 'react-router-dom';
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            clicked: false
+        }
+
+        this.handleClick = this.handleClick.bind(this);
+        this.handleLogOut = this.handleLogOut.bind(this);
+    }
+
+    handleClick(e) {
+        e.preventDefault();
+        this.setState({
+            clicked: !this.state.clicked
+        });
+    }
+
+    handleLogOut(e) {
+        this.props.logout;
     }
 
     render() {
@@ -25,8 +43,8 @@ class Navbar extends React.Component {
                     <NavLink to={`/users/${this.props.currentUser.id}`} className="profile-button nav-button links">{this.props.currentUser.username}</NavLink> 
                     <i className="fas fa-bell nav-button links"></i>   
                     <i className="fas fa-envelope nav-button links"></i>
-                    <i className="fas fa-ellipsis-h nav-button links"></i>          
-                    {/* <button className="logout-button nav-button" onClick={this.props.logout}>Log Out</button> */}
+                    <i onClick={this.handleClick} className="fas fa-ellipsis-h nav-button links"></i>
+                    {this.state.clicked ? <button className="logout-button nav-button" onClick={this.props.logout}>Log Out</button> : null }
                 </div>
             </header>   
             :
