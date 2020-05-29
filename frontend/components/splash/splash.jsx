@@ -11,8 +11,9 @@ class Splash extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetchSongs();
+        this.props.fetchUsers();
     }
 
     handleClick(e) {
@@ -22,11 +23,23 @@ class Splash extends React.Component {
     }
 
     render() {
+        let count = 0;
         const songList = this.props.songs.map((song) => {
-            return (
-                console.log(song)
-            )
-            });
+            if (count < 12) {
+                count++
+                return (
+                    <div className="splash-song" key={song.id}>
+                        <img className="song-photo" src={song.photoUrl} alt="album cover"/>
+                        <p>{song.title}</p>
+                        <p>{this.props.users.map((user) => {
+                            if (user.id === song.artist_id) {
+                                return user.username
+                            }
+                        })}</p>
+                    </div>
+                )
+            }
+        });
 
         return (
             <>
@@ -51,6 +64,9 @@ class Splash extends React.Component {
                 </div>
                 <div>
                     <h2>Hear what's trending for free in the royalty free music community </h2>
+                </div>
+                <div className="splash-songs">
+                    {songList}
                 </div>
             </>
         )

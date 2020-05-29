@@ -2,11 +2,13 @@ import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
 import { logout } from '../../actions/session_actions';
 import { fetchSongs } from "../../actions/song_actions";
+import { fetchUsers } from "../../actions/user_actions";
 import Splash from './splash';
 
 
 const mapStateToProps = (state) => {
     return {
+        users: Object.values(state.entities.users),
         songs: Object.values(state.entities.songs)
     };
 };
@@ -14,7 +16,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),
     openModal: (modal) => dispatch(openModal(modal)),
-    fetchSongs: () => dispatch(fetchSongs())
+    fetchSongs: () => dispatch(fetchSongs()),
+    fetchUsers: () => dispatch(fetchUsers())
 });
 
 export default connect(

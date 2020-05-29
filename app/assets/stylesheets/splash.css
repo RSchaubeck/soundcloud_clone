@@ -79,3 +79,19 @@
  .logout-button {
     background: transparent;
  }
+
+ .splash-songs {
+    width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+ }
+
+ .splash-song {
+    padding-bottom: 15px;
+ }
+
+ .song-photo {
+    height: 170px;
+    width: 170px;
+ }
