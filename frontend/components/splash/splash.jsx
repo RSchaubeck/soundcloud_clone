@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import SongPlayer from '../song_player/song_player';
 
 class Splash extends React.Component {
     constructor(props) {
@@ -30,6 +30,7 @@ class Splash extends React.Component {
                 return (
                     <div className="splash-song" key={song.id}>
                         <img className="song-photo" src={song.photoUrl} alt="album cover"/>
+                        <i key={song.songUrl} onClick={this.handleClick} className="splash-play-btn far fa-play-circle"></i>
                         <p>{song.title}</p>
                         <p>{this.props.users.map((user) => {
                             if (user.id === song.artist_id) {
@@ -43,31 +44,34 @@ class Splash extends React.Component {
 
         return (
             <>
-                <div className="splash-container">
-                    <div className="full-splash">
-                        <div className="left-splash">
-                            <i className="fab fa-mixcloud"></i>
-                            <span to="/" className="splash-name">JAECLOUD</span>
+                <div className="full-page-container">
+                    <div className="splash-container">
+                        <div className="full-splash">
+                            <div className="left-splash">
+                                <i className="fab fa-mixcloud"></i>
+                                <span to="/" className="splash-name">JAECLOUD</span>
+                            </div>
+                            <div className="right-splash">
+                                <button className="login-button splash-button" onClick={() => this.props.openModal('login')}>Sign In</button>
+                                <button className="signup-button splash-button" onClick={() => this.props.openModal('signup')}>Create Account</button>
+                                <a href="/">For Creators</a>
+                            </div>
                         </div>
-                        <div className="right-splash">
-                            <button className="login-button splash-button" onClick={() => this.props.openModal('login')}>Sign In</button>
-                            <button className="signup-button splash-button" onClick={() => this.props.openModal('signup')}>Create Account</button>
-                            <a href="/">For Creators</a>
+                        <div className="splash-info">
+                            <h2>Discover more with JaeCloud Go+</h2>
+                            <br />
+                            <p>JaeCloud Go+ lets you listen offline, ad-free, with over 150 <br /> million tracks — and growing.</p>
+                            <button className="splash-offer">Start uploading today</button>
                         </div>
                     </div>
-                    <div className="splash-info">
-                        <h2>Discover more with JaeCloud Go+</h2>
-                        <br />
-                        <p>JaeCloud Go+ lets you listen offline, ad-free, with over 150 <br /> million tracks — and growing.</p>
-                        <button className="splash-offer">Start uploading today</button>
+                    <div className="trending">
+                        <h2>Hear what's trending for free in the royalty free music community </h2>
+                    </div>
+                    <div className="splash-songs">
+                        {songList}
                     </div>
                 </div>
-                <div>
-                    <h2>Hear what's trending for free in the royalty free music community </h2>
-                </div>
-                <div className="splash-songs">
-                    {songList}
-                </div>
+                <SongPlayer songUrl={this.state.currentTrack} />
             </>
         )
     }
