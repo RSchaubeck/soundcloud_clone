@@ -11,7 +11,7 @@ class Splash extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.fetchSongs();
     }
 
@@ -22,9 +22,11 @@ class Splash extends React.Component {
     }
 
     render() {
-        // const songList = this.props.songs.map((song) => {
-
-        // }
+        const songList = this.props.songs.map((song) => {
+            return (
+                console.log(song)
+            )
+            });
 
         return (
             <>

@@ -5,9 +5,9 @@ import { fetchSongs } from "../../actions/song_actions";
 import Splash from './splash';
 
 
-const mapStateToProps = ({ session, entities: { users } }) => {
+const mapStateToProps = (state) => {
     return {
-        currentUser: users[session.id]
+        songs: Object.values(state.entities.songs)
     };
 };
 
