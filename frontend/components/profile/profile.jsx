@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Navbar from '../navbar/navbar';
+import Navbar from '../navbar/navbar_container';
 import SongPlayer from '../song_player/song_player';
 
 class Profile extends React.Component {
@@ -13,7 +13,7 @@ class Profile extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.fetchSongs();
     }
 
@@ -25,9 +25,11 @@ class Profile extends React.Component {
 
     render() {
         const currentUser = this.props.currentUser;
+        let count = 0;
 
         const songList = this.props.songs.map((song) => {
             if (song.artist_id === currentUser.id) {
+                count ++;
                 return (
                     <div className="song-wrapper" key={song.id}>
                         <div className="profile-image">
@@ -57,7 +59,7 @@ class Profile extends React.Component {
         
         return(
             <>
-                <Navbar currentUser={this.props.currentUser}/>
+                <Navbar />
                 <div className="full-page-container">
                     <div className="profile-head">
                         <span>D</span>
@@ -88,7 +90,7 @@ class Profile extends React.Component {
                                 <div className="user-stats">
                                     <p className="stats">Followers <br /><span>146</span><br /></p>
                                     <p className="stats">Following <br /><span>157</span><br /></p>
-                                    <p className="stats">Tracks<br /><span>{songList.length}</span><br /></p>
+                                    <p className="stats">Tracks<br /><span>{count}</span><br /></p>
                                 </div>
                                 <div className="go-mobile">
                                     <p>Go mobile</p>

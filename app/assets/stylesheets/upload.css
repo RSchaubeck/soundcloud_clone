@@ -51,9 +51,10 @@
 
  .upload-links {
      display: flex;
+     width: 65%;
      justify-content: start;
      align-content: flex-start;
-     position: relative;
+     position: fixed;
      top: 50px;
      border-bottom: 1px solid #d1d1d1;
  }
@@ -233,7 +234,7 @@
 
   button.upload-photo {
       height: 25px;
-      padding: 2px 10px 2px 10px;
+      padding: 2px 1px 2px 10px;
       text-align: center;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
       margin-bottom: 20px;
