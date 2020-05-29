@@ -93,7 +93,7 @@ class Profile extends React.Component {
                                 <div className="go-mobile">
                                     <p>Go mobile</p>
                                     <p className="haejun">Thanks Haejun</p>
-                                    <p><a href="https://github.com/RSchaubeck">Github</a> ⁃ Privacy ⁃ Cookies ⁃ Imprint ⁃ Creator Resources ⁃ Blog ⁃ Charts ⁃ Popular searches</p>
+                                    <p><a href="https://github.com/RSchaubeck" target="_blank">Github</a> ⁃ Privacy ⁃ Cookies ⁃ Imprint ⁃ Creator Resources ⁃ Blog ⁃ Charts ⁃ Popular searches</p>
                                     <p id="last-foot"><Link to="/">Language:</Link> English (US)</p>                            
                                 </div>
                         </div>

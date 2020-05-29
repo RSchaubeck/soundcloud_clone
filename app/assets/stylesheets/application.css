@@ -38,11 +38,10 @@
  .full-page-container {
    height: 100%;
    display: flex;
-   width: 87%;
+   width: 65%;
    flex-direction: column;
    justify-content: center;
    align-content: center;
-   margin-left: 95px;
    background-color: white;
  }
 

@@ -1,16 +1,20 @@
 .full-navbar-container {
    display: flex;
-   width: auto;
+   justify-content: center;
+   width: 100%;
+   height: 45px;
+   background-color: #333;
+   position: fixed;
 }
 
  .navbar-container {
-    width: 100%;
+    width: 65%;
     height: 45px;
     position: fixed;
     z-index: 200;
     background-color: #333;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-content: center;
     font-family: Verdana, Tahoma, sans-serif;
  }
@@ -24,8 +28,6 @@
     height: 60%;
     width: 410px;
     align-self: center;
-    margin-left: -120px;
-    margin-right: -150px;
  }
 
  .right-nav{
@@ -113,13 +115,11 @@
    border: 0px;
    font-size: 14px;
    width: 120%;
-   margin-left: -55px;
-   margin-right: -20px;
  }
 
  .fa-search {
    position: relative;
-   right: 18px;
+   right: 35px;
    top: 5px;
    color: gray;
  }
