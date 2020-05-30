@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SongPlayer from '../song_player/song_player';
 
 class Splash extends React.Component {
@@ -64,11 +65,34 @@ class Splash extends React.Component {
                             <button className="splash-offer">Start uploading today</button>
                         </div>
                     </div>
+                    <div className="splash-search">
+                        <input type="search" id="main-search" name="q" placeholder="Search" />
+                        <i className="magnify fas fa-search"></i>
+                        <p>or</p>
+                        <button className="footer-sign-up" onClick={() => this.props.openModal('login')}>Upload your own</button>
+                    </div>
                     <div className="trending">
                         <h2>Hear what's trending for free in the royalty free music community </h2>
                     </div>
                     <div className="splash-songs">
                         {songList}
+                    </div>
+                    <div className="second-splash-image">
+                    </div>
+                    <div className="splash-footer">
+                        <div className="top-foot">
+                            <h1>Thanks for listening. Now join in.</h1>
+                            <h2>Save tracks, follow artists and build playlists. All for free.</h2>
+                            <button className="footer-sign-up" onClick={() => this.props.openModal('signup')}>Create account</button>
+                            <div className="foot-session">
+                                <p>Already have an account?</p>
+                                <button onClick={() => this.props.openModal('login')}>Sign in</button>
+                            </div>
+                        </div>
+                        <div className="bottom-foot">
+                            <p><a href="https://github.com/RSchaubeck" target="_blank">Github</a> ⁃ Directory ⁃ About Us ⁃ Jobs ⁃ Creator Resources ⁃ Blog ⁃ Charts ⁃ Popular Searches - Privacy - Cookies</p>
+                            <p className="last-foot"><Link to="/">Language:</Link> English (US)</p>
+                        </div>
                     </div>
                 </div>
                 <SongPlayer songUrl={this.state.currentTrack} />

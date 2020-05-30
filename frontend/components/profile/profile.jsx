@@ -96,7 +96,7 @@ class Profile extends React.Component {
                                     <p>Go mobile</p>
                                     <p className="haejun">Thanks Haejun</p>
                                     <p><a href="https://github.com/RSchaubeck" target="_blank">Github</a> ⁃ Privacy ⁃ Cookies ⁃ Imprint ⁃ Creator Resources ⁃ Blog ⁃ Charts ⁃ Popular searches</p>
-                                    <p id="last-foot"><Link to="/">Language:</Link> English (US)</p>                            
+                                    <p className="last-foot"><Link to="/">Language:</Link> English (US)</p>                            
                                 </div>
                         </div>
                     </div>
