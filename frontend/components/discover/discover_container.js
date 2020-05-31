@@ -1,15 +1,22 @@
 import { connect } from 'react-redux';
+import { fetchSongs } from "../../actions/song_actions";
+import { fetchUsers } from "../../actions/user_actions";
 import Discover from './discover';
-import { logout } from '../../actions/session_actions';
 
-const mapStateToProps = ({ session, entities: { users } }) => {
+const mapStateToProps = ({ session, entities: { users, songs } }) => {
     return {
-        currentUser: users[session.id]
+        currentUser: users[session.id],
+        users: Object.values(users),
+        songs: Object.values(songs)
     };
 };
 
 const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(logout())
+    fetchSongs: () => dispatch(fetchSongs()),
+    fetchUsers: () => dispatch(fetchUsers())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Discover);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Discover);
