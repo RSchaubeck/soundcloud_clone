@@ -33,7 +33,7 @@ class Profile extends React.Component {
                 return (
                     <div className="song-wrapper" key={song.id}>
                         <div className="profile-image">
-                            <span>D</span>
+                            <span>{currentUser.username.charAt(0)}</span>
                         </div>
                         <div className="play-song">
                             <div className="song-info">
