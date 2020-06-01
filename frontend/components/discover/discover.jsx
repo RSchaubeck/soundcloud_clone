@@ -27,7 +27,10 @@ class Discover extends React.Component {
     }
 
     handleLike(e) {
-        console.log(e.currentTarget.class)
+        const userId = this.props.currentUser.id;
+        const songId = e._dispatchInstances.key;
+        this.props.likeSong({userId, songId});
+
     }
 
     shuffleSongs(arr) {
@@ -43,13 +46,13 @@ class Discover extends React.Component {
         let count = 0;
 
         const songList = this.shuffleSongs(this.props.songs).map((song) => {
-            if (count < 12 && this.props.currentUser.id !== song.artist_id) {
+            if (count < 12) {
                 count++
                 return (
                     <div className="discover-song" key={song.id}>
                         <img className="song-photo" src={song.photoUrl} alt="album cover" />
                         <i key={song.songUrl} onClick={this.handleClick} className="splash-play-btn far fa-play-circle"></i>
-                        <i onClick={this.handleLike} className="fas fa-heart"></i>
+                        <i key={song.id} onClick={this.handleLike} className="fas fa-heart"></i>
                         <p>{song.title}</p>
                         <p>{this.props.users.map((user) => {
                             if (user.id === song.artist_id) {
@@ -70,21 +73,21 @@ class Discover extends React.Component {
                             <div className="song-section">
                                 <h2>New Music Now</h2>
                                 <p>The latest hits, updated all the time</p>
-                                <div className="dicover-songs-wrapper">
+                                <div className="discover-songs-wrapper">
                                     {songList.slice(0, 4)}
                                 </div>
                             </div>
                             <div className="song-section">
                                 <h2>Stay Home</h2>
                                 <p>Tunes for isolation and self-care</p>
-                                <div className="dicover-songs-wrapper">
+                                <div className="discover-songs-wrapper">
                                     {songList.slice(4, 8)}
                                 </div>
                             </div>
                             <div className="song-section">
                                 <h2>SoundCloud Charts</h2>
                                 <p>The most played tracks on SoundCloud this week</p>
-                                <div className="dicover-songs-wrapper">
+                                <div className="discover-songs-wrapper">
                                     {songList.slice(8, 13)}
                                 </div>
                             </div>

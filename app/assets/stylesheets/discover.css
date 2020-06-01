@@ -1,6 +1,7 @@
  .discover-wrapper {
      display: flex;
      margin-top: 45px;
+     margin-bottom: 52px;
  }
 
  .discover-songs {
@@ -12,12 +13,25 @@
  .song-section {
      display: flex;
      flex-direction: column;
+     border-bottom: 1px solid #e5e5e5;
  }
 
- .dicover-songs-wrapper {
+ .song-section h2 {
+   font-size: 23px;
+   padding: 25px 0 15px 15px;
+ }
+
+ .song-section > p{
+    color: #999;
+    font-size: 14px;
+    padding: 0 0 20px 15px;
+ }
+
+ .discover-songs-wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    width: 100%;
  }
 
   .discover-song {
