@@ -109,11 +109,11 @@
     margin-bottom: 10px;
  }
 
- .splash-song p {
+ .splash-song p, .discover-song p {
     font-size: 15px;
  }
 
- .splash-song p:last-child {
+ .splash-song p:last-child, .discover-song p:last-child {
     font-size: 12px;
     color: #999;
     margin-top: 7px;
@@ -130,7 +130,7 @@
     -ms-transform: translate(-50%, -50%);
  }
 
- .splash-song:hover .splash-play-btn {
+ .splash-song:hover .splash-play-btn, .discover-song:hover .splash-play-btn {
     display: block;
     cursor: pointer;
  }
