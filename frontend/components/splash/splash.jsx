@@ -10,6 +10,7 @@ class Splash extends React.Component {
         }
 
         this.handleClick = this.handleClick.bind(this);
+        this.shuffleSongs = this.shuffleSongs.bind(this);
     }
 
     componentDidMount() {
@@ -23,9 +24,18 @@ class Splash extends React.Component {
         })
     }
 
+    shuffleSongs(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
     render() {
         let count = 0;
-        const songList = this.props.songs.map((song) => {
+        
+        const songList = this.shuffleSongs(this.props.songs).map((song) => {
             if (count < 12) {
                 count++
                 return (
