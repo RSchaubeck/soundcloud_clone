@@ -1,11 +1,13 @@
+import { fetchSong } from './song_actions';
+import { fetchUser } from './user_actions';
 import * as LikeAPIUtil from "../util/like_api_util";
 
 export const RECEIVE_LIKE = "RECEIVE_LIKE";
 export const RECEIVE_LIKES = "RECEIVE_LIKES";
 
-export const receiveLike = (like) => ({
+export const receiveLike = like => ({
     type: RECEIVE_LIKE,
-    like: { like }
+    like
 });
 
 export const receiveLikes = (likes) => ({
@@ -13,10 +15,10 @@ export const receiveLikes = (likes) => ({
     likes
 });
 
-export const likeSong = like => (
-    LikeAPIUtil.likeSong(like).then((like) => (
-        dispatch(receiveLike(like))
-    ))
+export const likeSong = like => dispatch => (
+    LikeAPIUtil.likeSong(like).then((like) => {
+        dispatch(receiveLike(like));
+    })
 );
 
 export const fetchLikes = userId => dispatch => (

@@ -7,12 +7,13 @@ class Discover extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentTrack: ""
+            currentTrack: "",
+            user_id: this.props.currentUser.id,
+            song_id: ""
         }
 
-        this.handleClick = this.handleClick.bind(this);
+        // this.handleClick = this.handleClick.bind(this);
         this.handleLike = this.handleLike.bind(this);
-        this.shuffleSongs = this.shuffleSongs.bind(this);
     }
 
     componentDidMount() {
@@ -27,31 +28,24 @@ class Discover extends React.Component {
     }
 
     handleLike(e) {
-        const userId = this.props.currentUser.id;
-        const songId = e._dispatchInstances.key;
-        this.props.likeSong({userId, songId});
-
-    }
-
-    shuffleSongs(arr) {
-        let a = arr;
-        for (let i = a.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [a[i], a[j]] = [a[j], a[i]];
-        }
-        return a;
+        e.preventDefault();
+        let like = {
+            user_id: this.state.user_id,
+            song_id: e._dispatchInstances.key
+        };
+        this.props.likeSong(like);
     }
 
     render() {
         let count = 0;
 
-        const songList = this.shuffleSongs(this.props.songs).map((song) => {
-            if (count < 12) {
+        const songList = this.props.songs.map((song) => {
+            if ( count <= 12 && song.artist_id != this.props.currentUser.id) {
                 count++
                 return (
                     <div className="discover-song" key={song.id}>
                         <img className="song-photo" src={song.photoUrl} alt="album cover" />
-                        <i key={song.songUrl} onClick={this.handleClick} className="splash-play-btn far fa-play-circle"></i>
+                        <i key={song.songUrl} className="splash-play-btn far fa-play-circle"></i>
                         <i key={song.id} onClick={this.handleLike} className="fas fa-heart"></i>
                         <p>{song.title}</p>
                         <p>{this.props.users.map((user) => {
@@ -88,14 +82,15 @@ class Discover extends React.Component {
                                 <h2>SoundCloud Charts</h2>
                                 <p>The most played tracks on SoundCloud this week</p>
                                 <div className="discover-songs-wrapper">
-                                    {songList.slice(8, 13)}
+                                    {songList.slice(8, 12)}
                                 </div>
                             </div>
                         </div>
-                        <div className="sidebar">
+                        <div className=" discover-sidebar sidebar">
                             <div className="user-stats">
                                 <p className="stats">Followers <br /><span>146</span><br /></p>
                                 <p className="stats">Following <br /><span>157</span><br /></p>
+                                <p className="stats">Tracks<br /><span>5</span><br /></p>
                             </div>
                             <div className="go-mobile">
                                 <p>Go mobile</p>
@@ -106,7 +101,7 @@ class Discover extends React.Component {
                         </div>
                     </div>
                 </div>
-                <SongPlayer songUrl={this.state.currentTrack} />
+                {/* <SongPlayer songUrl={this.state.currentTrack} /> */}
             </>
         )
     }

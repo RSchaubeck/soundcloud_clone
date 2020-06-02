@@ -56,3 +56,7 @@
     display: block;
     cursor: pointer;
  }
+
+ .discover-sidebar {
+    padding-top: 25px;
+ }

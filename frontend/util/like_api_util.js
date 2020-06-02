@@ -1,4 +1,4 @@
-export const likeSong = like => (
+export const likeSong = (like) => (
     $.ajax({
         method: "POST",
         url: "/api/likes",
