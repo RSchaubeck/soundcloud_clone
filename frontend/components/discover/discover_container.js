@@ -1,23 +1,16 @@
 import { connect } from 'react-redux';
 import { fetchSongs } from "../../actions/song_actions";
 import { fetchUsers } from "../../actions/user_actions";
-import { likeSong } from '../../actions/like_actions'
+import { likeSong, fetchLikes, removeLike } from '../../actions/like_actions'
 import Discover from './discover';
 
-const shuffleSongs = (arr) => {
-    let a = arr;
-    for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-}
-
 const mapStateToProps = ({ session, entities: { users, songs, likes } }) => {
+    let songsCopy = Object.values(songs);
+    let reversedSongs = songsCopy.reverse();
     return {
         currentUser: users[session.id],
         users: Object.values(users),
-        songs: shuffleSongs(Object.values(songs)),
+        songs: reversedSongs,
         likes: Object.values(likes)
     };
 };
@@ -25,7 +18,9 @@ const mapStateToProps = ({ session, entities: { users, songs, likes } }) => {
 const mapDispatchToProps = dispatch => ({
     fetchSongs: () => dispatch(fetchSongs()),
     fetchUsers: () => dispatch(fetchUsers()),
-    likeSong: (like) => dispatch(likeSong(like))
+    likeSong: (like) => dispatch(likeSong(like)),
+    fetchLikes: () => dispatch(fetchLikes()),
+    removeLike: (likeId) => dispatch(removeLike(likeId))
 });
 
 export default connect(

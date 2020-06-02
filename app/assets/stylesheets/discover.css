@@ -52,6 +52,10 @@
     -ms-transform: translate(-50%, -50%);
  }
 
+ .liked {
+    color: #f50;
+ }
+
  .discover-song:hover .fa-heart {
     display: block;
     cursor: pointer;
