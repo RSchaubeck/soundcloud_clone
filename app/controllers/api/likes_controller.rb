@@ -1,7 +1,7 @@
 class Api::LikesController < ApplicationController
    
     def index
-        @likes = Like.where(user_id: params[:id])
+        @likes = Like.where(user_id: current_user.id)
     end
 
     def show 
@@ -12,7 +12,7 @@ class Api::LikesController < ApplicationController
     def create 
         @like = Like.new(like_params)
 
-        if @like.save
+        if @like.save!
             render :show
         else
             render json: @like.errors.full_messages, status: 422

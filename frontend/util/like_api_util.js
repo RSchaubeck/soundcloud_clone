@@ -9,7 +9,7 @@ export const likeSong = (like) => (
 export const fetchLikes = () => (
     $.ajax({
         method: "GET",
-        url: "/api/likes",
+        url: "/api/likes"
     })
 );
 
