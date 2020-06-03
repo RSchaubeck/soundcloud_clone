@@ -8,11 +8,10 @@ class Discover extends React.Component {
         super(props);
         this.state = {
             currentTrack: "",
-            user_id: this.props.currentUser.id,
-            clicked: false
+            user_id: this.props.currentUser.id
         }
 
-        // this.handleClick = this.handleClick.bind(this);
+        this.handleClick = this.handleClick.bind(this);
         this.handleLike = this.handleLike.bind(this);
     }
 
@@ -30,16 +29,22 @@ class Discover extends React.Component {
 
     handleLike(e) {
         e.preventDefault();
-        this.setState({clicked: !this.state.clicked});
-        let like = {
-            user_id: this.state.user_id,
-            song_id: e._dispatchInstances.key
-        };
-        this.props.likeSong(like);
+        let el = e.currentTarget;
+
+        if(el.className.includes("liked")) {
+            el.classList.remove("liked");
+            this.props.removeLike(e._dispatchInstances.key);
+        } else {
+            let like = {
+                user_id: this.state.user_id,
+                song_id: e._dispatchInstances.key
+            };
+            el.classList.add("liked");
+            this.props.likeSong(like);
+        }
     }
 
     render() {
-        let likedClass = this.state.clicked ? "fas fa-heart liked" : "fas fa-heart";
         let count = 0;
 
         const songList = this.props.songs.map((song) => {
@@ -49,7 +54,15 @@ class Discover extends React.Component {
                     <div className="discover-song" key={song.id}>
                         <img className="song-photo" src={song.photoUrl} alt="album cover" />
                         <i key={song.songUrl} className="splash-play-btn far fa-play-circle"></i>
-                        <i key={song.id} onClick={this.handleLike} className={likedClass}></i>
+                        {this.props.likes.length === 0 ? <i key={song.id} onClick={this.handleLike} className={"fas fa-heart"}></i>
+                        :
+                        this.props.likes.map((like) => {
+                            if (like.song_id === song.id) {
+                                return <i key={like.id} onClick={this.handleLike} className={"fas fa-heart liked"}></i>
+                            } else {
+                                return <i key={song.id} onClick={this.handleLike} className={"fas fa-heart"}></i>
+                            }
+                        })}
                         <p>{song.title}</p>
                         <p>{this.props.users.map((user) => {
                             if (user.id === song.artist_id) {
@@ -104,7 +117,7 @@ class Discover extends React.Component {
                         </div>
                     </div>
                 </div>
-                {/* <SongPlayer songUrl={this.state.currentTrack} /> */}
+                <SongPlayer songUrl={this.state.currentTrack} />
             </>
         )
     }
