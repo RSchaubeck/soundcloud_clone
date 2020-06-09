@@ -1,0 +1,12 @@
+ .likes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    margin-bottom: 51px;
+ }
+ 
+ .liked-song:last-child {
+    margin-bottom: 300px;
+ } 

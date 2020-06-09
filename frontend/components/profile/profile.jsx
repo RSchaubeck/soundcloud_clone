@@ -69,12 +69,11 @@ class Profile extends React.Component {
                         </div>
                     </div>
                     <div className="profile-links">
-                        <Link to="/upload">All</Link>
-                        <Link to="/upload">Popular Tracks</Link>
-                        <Link to="/upload">Tracks</Link>
-                        <Link to="/upload">Albums</Link>
-                        <Link to="/upload">Playlists</Link>
-                        <Link to="/upload">Reposts</Link>
+                        <Link to="/discover">All</Link>
+                        <Link to="/liked">Liked Tracks</Link>
+                        <Link to="/discover">Tracks</Link>
+                        <Link to="/discover">Albums</Link>
+                        <Link to="/discover">Playlists</Link>
                     </div>
                     <div className="main-profile-container">
                         <div className="profile-box">

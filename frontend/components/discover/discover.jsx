@@ -48,16 +48,17 @@ class Discover extends React.Component {
         let count = 0;
 
         const songList = this.props.songs.map((song) => {
-            if ( count <= 13 && song.artist_id != this.props.currentUser.id) {
+            if ( count <= 13 && song.artist_id !== this.props.currentUser.id) {
                 count++
                 return (
-                    <div className="discover-song" key={song.songUrl}>
+                    <div className="discover-song">
                         <img className="song-photo" src={song.photoUrl} alt="album cover" />
                         <i key={song.songUrl} onClick={this.handleClick} className="splash-play-btn far fa-play-circle"></i>
                         {this.props.likes.length === 0 ? <i key={song.id} onClick={this.handleLike} className={"fas fa-heart"}></i>
                         :
                         this.props.likes.map((like) => {
                             if (like.song_id === song.id) {
+                                console.log(like)
                                 return <i key={like.id} onClick={this.handleLike} className={"fas fa-heart liked"}></i>
                             } else {
                                 return <i key={song.id} onClick={this.handleLike} className={"fas fa-heart"}></i>

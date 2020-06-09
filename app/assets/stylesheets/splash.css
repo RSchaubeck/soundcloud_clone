@@ -74,10 +74,6 @@
     align-self: center;
  }
 
- .logout-button {
-    background: transparent;
- }
-
  .trending {
     display: flex;
     justify-content: center;

@@ -124,3 +124,17 @@
    top: 5px;
    color: gray;
  }
+
+.logout-button {
+    background: black;
+    top: 35px;
+    position: relative;
+    right: 70px;
+    border: 0;
+    border-radius: 0;
+ }
+
+ .fa-ellipsis {
+    background-color: black;
+    position: fixed;
+ }
