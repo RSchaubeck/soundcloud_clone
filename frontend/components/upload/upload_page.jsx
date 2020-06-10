@@ -164,7 +164,7 @@ class UploadPage extends React.Component {
                     <p>By uploading, you confirm that your sounds comply with our <Link to="/">Terms of Use</Link> and you don't infringe anyone else's rights.</p>
                     <span className="footer-divide"></span>
                     <p><a href="https://github.com/RSchaubeck">Github</a> ⁃ Privacy ⁃ Cookies ⁃ Imprint ⁃ Creator Resources ⁃ Blog ⁃ Charts ⁃ Popular searches</p>
-                    <p id="last-foot"><Link to="/">Language:</Link> English (US)</p>
+                    <p id="last-foot">Language: English (US)</p>
                 </div>
             </>
         ) : (

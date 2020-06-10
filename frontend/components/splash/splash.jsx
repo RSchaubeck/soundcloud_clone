@@ -65,14 +65,13 @@ class Splash extends React.Component {
                             <div className="right-splash">
                                 <button className="login-button splash-button" onClick={() => this.props.openModal('login')}>Sign In</button>
                                 <button className="signup-button splash-button" onClick={() => this.props.openModal('signup')}>Create Account</button>
-                                <a href="/">For Creators</a>
                             </div>
                         </div>
                         <div className="splash-info">
                             <h2>Discover more with JaeCloud Go+</h2>
                             <br />
                             <p>JaeCloud Go+ lets you listen offline, ad-free, with over 150 <br /> million tracks — and growing.</p>
-                            <button className="splash-offer">Start uploading today</button>
+                            <button className="splash-offer" onClick={() => this.props.openModal('signup')}>Start uploading today</button>
                         </div>
                     </div>
                     <div className="splash-search">

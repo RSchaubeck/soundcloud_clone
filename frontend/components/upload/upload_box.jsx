@@ -52,16 +52,16 @@ class UploadBox extends React.Component {
                                 onChange={this.props.handleUploadSong}
                             />
                         </div>
-                        <p>Provide FLAC, WAV, ALAC, or AIFF for highest audio quality. <a href="https://help.soundcloud.com/hc/en-us/articles/115003452847-Uploading-requirements#typeOfFile" target="_blank" id="quality-link">Learn more about lossless HD.</a></p>
+                        <p>Provide FLAC, WAV, ALAC, or AIFF for highest audio quality.</p>
                     </div>
                 </div>
                 <div className="upload-footer">
-                    <p><Link to="/">Supported file types and sizes</Link> ⁃ <Link to="/">Upload troubleshooting tips</Link> ⁃ <a href="https://github.com/RSchaubeck">Github</a></p>
+                    <p><a href="https://github.com/RSchaubeck">Github</a> - Supported file types and sizes ⁃ Upload troubleshooting tips</p>
 
                     <p>By uploading, you confirm that your sounds comply with our Terms of Use and you don't infringe anyone else's rights.</p>
                     <span className="footer-divide"></span>
                     <p>Legal ⁃ Privacy ⁃ Cookies ⁃ Imprint ⁃ Creator Resources ⁃ Blog ⁃ Charts ⁃ Popular searches</p>
-                    <p id="last-foot"><Link to="/">Language:</Link> English (US)</p>
+                    <p id="last-foot">Language: English (US)</p>
                 </div>
             </>
         )
