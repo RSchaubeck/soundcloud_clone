@@ -174,8 +174,7 @@ class UploadPage extends React.Component {
         return(
             <>
                 <NavBar />
-                <div className="full-page-container">
-                    <UploadLinks />
+                <div className="upload-page-container">
                        {uploadRender}
                 </div>
             </>

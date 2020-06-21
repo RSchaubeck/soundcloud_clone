@@ -83,18 +83,8 @@ class SessionForm extends React.Component {
                         <input className="input-submit" type="submit" value="Continue"/>
                         <br />
                         {demoButton}
-                        <a id="help" href="/">Need help?</a>
                         <br />
                     </div>
-                    <p id="disclaimer">
-                    We may use your email and devices for updates and tips on <br />
-                    JaeCloud's products and services, and for activities notifications. <br />
-                    You can unsubscribe for free at any time in your notification <br />
-                    settings.
-                    <br /><br />
-                    We may use information you provide us in order to show you <br />
-                    targeted ads as described in our <a id="privacy" href="/">Privacy Policy</a>
-                    </p>
                 </form>
             </div>
         );

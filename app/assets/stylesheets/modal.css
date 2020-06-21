@@ -62,7 +62,7 @@
    left: 50%;
    transform: translate(-50%, -50%);
    animation-name: modal-slide-down;
-   animation-duration: 0.7s;
+   animation-duration: 1.0s;
  }
 
  .close-session-form {

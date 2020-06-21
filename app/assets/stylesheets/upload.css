@@ -1,3 +1,13 @@
+.upload-page-container {
+    height: 100vh;
+   display: flex;
+   width: 65%;
+   flex-direction: column;
+   justify-content: center;
+   align-content: center;
+   background-color: white; 
+}
+
 .upload-container {
     display: flex;
     justify-content: center;
@@ -12,7 +22,6 @@
     height: 400px;
     background-color: #fff;
     text-align: center;
-    margin-top: 155px;
     border-radius: 2px;
     border: 1px solid #f2f2f2;
     box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
@@ -89,7 +98,6 @@
  }
 
   .upload-footer span {
-      border-bottom: 1px solid #f2f2f2;
       width: 77%;
       margin-top: 10px;
       margin-bottom: 10px;

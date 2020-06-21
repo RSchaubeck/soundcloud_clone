@@ -56,12 +56,10 @@ class UploadBox extends React.Component {
                     </div>
                 </div>
                 <div className="upload-footer">
-                    <p><a href="https://github.com/RSchaubeck">Github</a> - Supported file types and sizes ⁃ Upload troubleshooting tips</p>
+                    <p><a href="https://github.com/RSchaubeck">Github</a> - <a href="https://github.com/RSchaubeck">LinkedIn</a> - <a href="https://github.com/RSchaubeck">Angel List</a></p>
 
-                    <p>By uploading, you confirm that your sounds comply with our Terms of Use and you don't infringe anyone else's rights.</p>
+                    <p>By uploading, you confirm that your sounds don't infringe anyone else's rights.</p>
                     <span className="footer-divide"></span>
-                    <p>Legal ⁃ Privacy ⁃ Cookies ⁃ Imprint ⁃ Creator Resources ⁃ Blog ⁃ Charts ⁃ Popular searches</p>
-                    <p id="last-foot">Language: English (US)</p>
                 </div>
             </>
         )

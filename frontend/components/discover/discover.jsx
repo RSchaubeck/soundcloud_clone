@@ -105,15 +105,11 @@ class Discover extends React.Component {
                         </div>
                         <div className=" discover-sidebar sidebar">
                             <div className="user-stats">
-                                <p className="stats">Followers <br /><span>146</span><br /></p>
-                                <p className="stats">Following <br /><span>157</span><br /></p>
                                 <p className="stats">Tracks<br /><span>5</span><br /></p>
+                                <p className="stats">Liked tracks<br /><span>5</span><br /></p>
                             </div>
                             <div className="go-mobile">
-                                <p>Go mobile</p>
-                                <p className="haejun">Thanks Haejun</p>
-                                <p><a href="https://github.com/RSchaubeck" target="_blank">Github</a> ⁃ Privacy ⁃ Cookies ⁃ Imprint ⁃ Creator Resources ⁃ Blog ⁃ Charts ⁃ Popular searches</p>
-                                <p className="last-foot"><Link to="/">Language:</Link> English (US)</p>
+                                <p><a href="https://github.com/RSchaubeck" target="_blank">Github</a> - <a href="https://github.com/RSchaubeck" target="_blank">LinkedIn</a></p>
                             </div>
                         </div>
                     </div>
