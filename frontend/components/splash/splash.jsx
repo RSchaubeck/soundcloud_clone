@@ -45,7 +45,7 @@ class Splash extends React.Component {
                         <p>{song.title}</p>
                         <p>{this.props.users.map((user) => {
                             if (user.id === song.artist_id) {
-                                return user.username
+                                return user.username 
                             }
                         })}</p>
                     </div>

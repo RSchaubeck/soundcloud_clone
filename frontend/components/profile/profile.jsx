@@ -2,15 +2,18 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Navbar from '../navbar/navbar_container';
 import SongPlayer from '../song_player/song_player';
+import Edit from '../edit/edit_container';
 
 class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentTrack: ""
+            currentTrack: "",
+            song: null
         }
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     componentWillMount() {
@@ -20,7 +23,11 @@ class Profile extends React.Component {
     handleClick(e) {
         this.setState({
             currentTrack: e._dispatchInstances.key
-        })
+        });
+    }
+
+    handleDelete(e) {
+        this.props.deleteSong(e._dispatchInstances.key);
     }
 
     render() {
@@ -46,9 +53,8 @@ class Profile extends React.Component {
                                 </div>
                             </div>
                             <div className="song-actions">
-                                <button><i className="fas fa-share-square"></i>Share</button>
-                                <button><i className="fas fa-pen"></i>Edit</button>
-                                <button><i className="far fa-play-circle"></i>Add to Next up</button>
+                                <button onClick={() => this.props.openModal('edit', song)}><i className="fas fa-pen"></i>Edit</button>
+                                <button key={song.id} onClick={this.handleDelete}><i className="fas fa-trash"></i>Delete</button>
                                 <button><i className="fas fa-ellipsis-h"></i>More</button>
                             </div>
                         </div>

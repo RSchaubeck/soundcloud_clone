@@ -73,6 +73,7 @@
  .main-profile-container {
      display: flex;
      margin-top: 25px;
+     height: 100vh;
  }
 
  .profile-box {

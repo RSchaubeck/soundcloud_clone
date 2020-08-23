@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import Navbar from "../navbar/navbar_container";
 import SongPlayer from '../song_player/song_player';
 

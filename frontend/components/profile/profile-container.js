@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { fetchUser } from "../../actions/user_actions";
-import { fetchSong, fetchSongs } from "../../actions/song_actions";
+import { fetchSong, fetchSongs, deleteSong } from "../../actions/song_actions";
+import { openModal } from '../../actions/modal_actions';
 import Profile from "./profile";
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,7 +14,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
     fetchUser: (userId) => dispatch(fetchUser(userId)),
     fetchSong: (songId) => dispatch(fetchSong(songId)),
-    fetchSongs: () => dispatch(fetchSongs())
+    deleteSong: (songId) => dispatch(deleteSong(songId)),
+    fetchSongs: () => dispatch(fetchSongs()),
+    openModal: (modal) => dispatch(openModal(modal))
 });
 
 export default connect(

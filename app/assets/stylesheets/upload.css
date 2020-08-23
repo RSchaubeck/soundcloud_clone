@@ -141,7 +141,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-left: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
     height: 260px;
     width: 260px;
     background-image: linear-gradient(135deg,#846170,#70929c);

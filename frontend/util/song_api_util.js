@@ -29,5 +29,5 @@ export const updateSong = (song) =>
 export const deleteSong = (songId) =>
     $.ajax({
         method: "DELETE",
-        url: `/api/songs/${songId}`,
+        url: `/api/songs/${songId}`
     });
