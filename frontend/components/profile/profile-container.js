@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => ({
     fetchSong: (songId) => dispatch(fetchSong(songId)),
     deleteSong: (songId) => dispatch(deleteSong(songId)),
     fetchSongs: () => dispatch(fetchSongs()),
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal, data) => dispatch(openModal(modal, data))
 });
 
 export default connect(

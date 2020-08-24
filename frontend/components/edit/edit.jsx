@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class Edit extends React.Component {
     constructor(props) {
         super(props);
-
+        
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -12,52 +12,12 @@ class Edit extends React.Component {
         console.log(this.props);
     }
 
+    autoSelectGenre() {
+
+    }
+
     render() {
-
         return(
-            // <>
-            //     <div className="edit-form-container">
-            //         <div className="edit-form-box">
-            //             <div className="edit-form">
-            //                 <label>
-            //                     Title<span className="required">*</span>
-            //                 </label>
-            //                 <input
-            //                     type="text"
-            //                 />
-            //                 <label>Genre</label>
-            //                 <select name="genres" id="genres" defaultValue="None">
-            //                     <option value="None">None</option>
-            //                     <option value="Custom">Custom</option>
-            //                     <option value="Alternative-Rock">Alternative Rock</option>
-            //                     <option value="Ambient">Ambient</option>
-            //                     <option value="Classical">Classical</option>
-            //                     <option value="Country">Country</option>
-            //                     <option value="Dance-and-EDM">Dance & EDM</option>
-            //                     <option value="Dancehall">Dancehall</option>
-            //                 </select>
-            //                 <label>Additional Tags</label>
-            //                 <input
-            //                     type="text"
-            //                 />
-            //                 <label>Description</label>
-            //                 <textarea
-            //                     placeholder="Describe your track"
-            //                     rows="4"
-            //                     cols="40"
-            //                 />
-            //             </div>
-            //             <div className="edit-bottom">
-            //                 <p><span className="required">*</span>Required Fields</p>
-            //                 <div className="edit-buttons">
-            //                     <button>Cancel</button>
-            //                     <button onClick={this.handleSubmit}>Save</button>
-            //                 </div>
-            //             </div>
-            //         </div>
-            //     </div>
-            // </>
-
             <>
                 <div className="edit-form-box">
                     <div id="progress-bar">
@@ -71,9 +31,10 @@ class Edit extends React.Component {
                                 </label>
                                 <input
                                     type="text"
+                                    defaultValue={this.props.song.title}
                                 />
                                 <label>Genre</label>
-                                <select name="genres" id="genres" defaultValue="None">
+                                <select name="genres" id="genres">
                                     <option value="None">None</option>
                                     <option value="Custom">Custom</option>
                                     <option value="Alternative-Rock">Alternative Rock</option>
@@ -86,10 +47,11 @@ class Edit extends React.Component {
                                 <label>Additional Tags</label>
                                 <input
                                     type="text"
+                                    defaultValue={this.props.song.tags}
                                 />
                                 <label>Description</label>
                                 <textarea
-                                    placeholder="Describe your track"
+                                    defaultValue={this.props.song.description}
                                     rows="4"
                                     cols="50"
                                 />

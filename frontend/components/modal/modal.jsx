@@ -10,7 +10,7 @@ function Modal({ modal, closeModal }) {
         return null;
     }
     let component;
-    switch (modal) {
+    switch (modal[0]) {
         case 'login':
             component = <LoginFormContainer />;
             break;
@@ -18,7 +18,7 @@ function Modal({ modal, closeModal }) {
             component = <SignupFormContainer />;
             break;
         case 'edit':
-            component = <EditContainer />;
+            component = <EditContainer song={modal[1]}/>;
             break;
         default:
             return null;
