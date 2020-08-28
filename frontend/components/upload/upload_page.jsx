@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import NavBar from '../navbar/navbar_container';
-import UploadLinks from './upload_links';
 import UploadBox from './upload_container';
 
 class UploadPage extends React.Component {
@@ -34,7 +33,6 @@ class UploadPage extends React.Component {
         formData.append('song[genre]', this.state.genre);
         formData.append('song[description]', this.state.description);
         formData.append('song[tags]', this.state.tags);
-        // formData.append('song[photo]', this.state.photoFile);
 
         if (this.state.songFile) {
             formData.append('song[song]', this.state.songFile);
@@ -104,14 +102,6 @@ class UploadPage extends React.Component {
                     <div className="upload-options">
                         <div className="full-song-info">
                             <div className="song-image-container">
-                                {/* <button className="upload-photo" onClick={this.handleClick}><i className="fas fa-camera"></i>Upload image</button>
-                                <input
-                                    type="file"
-                                    id="photo-file"
-                                    name="photo-file"
-                                    accept={"image/*"}
-                                    onChange={this.handleUploadPhoto}
-                                /> */}
                             </div>
                             <div className="song-options">
                                 <label>

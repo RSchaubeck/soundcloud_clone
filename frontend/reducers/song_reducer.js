@@ -8,7 +8,6 @@ const songReducer = (state={}, action) => {
         case RECEIVE_SONGS:
             return action.songs
         case UPDATE_SONG:
-            debugger
             return Object.assign({}, state, { [action.song.song.id]: action.song.song });
         case REMOVE_SONG:
             newState = merge({}, state);
@@ -18,13 +17,5 @@ const songReducer = (state={}, action) => {
             return state;
     }
 }
-
-// return Object.assign({}, state, {
-//     data: state.data.map(item => {
-//         return item.id === action.payload.id ? action.payload : item;
-//     }); // replace matched item and returns the array 
-// }); 
-
-
 
 export default songReducer;

@@ -10,7 +10,7 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        uploadSong: (formData) => dispatch(uploadSong(formData)),
+
     };
 };
 
