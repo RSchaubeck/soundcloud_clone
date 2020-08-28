@@ -21,9 +21,9 @@ export const uploadSong = (songData) =>
 
 export const updateSong = (song) =>
     $.ajax({
-        method: 'PATCH',
+        method: 'PUT',
         url: `/api/songs/${song.id}`,
-        data: { song }
+        data: {song}
     });
 
 export const deleteSong = (songId) =>

@@ -1,4 +1,6 @@
-json.partial! "api/songs/song", song: @song
+json.song do
+  json.partial! "api/songs/song", song: @song
+end
 
 json.artist do
   json.set! @artist.id do 

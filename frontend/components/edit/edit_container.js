@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
-import { fetchSong } from '../../actions/song_actions';
+import { updateSong } from '../../actions/song_actions';
 import Edit from './edit';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
@@ -11,7 +11,7 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchSong: (songId) => dispatch(fetchSong(songId)),
+        updateSong: (song) => dispatch(updateSong(song)),
         closeModal: () => dispatch(closeModal())
     }
 }

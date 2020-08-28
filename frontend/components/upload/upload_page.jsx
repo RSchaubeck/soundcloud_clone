@@ -125,7 +125,7 @@ class UploadPage extends React.Component {
                                 />
                                 <label>Genre</label>
                                 <select name="genres" id="genres" defaultValue="None">
-                                    <option value="None">None</option>
+                                    <option value="None" onChange={this.update("genre")}>None</option>
                                     <option value="Custom" onChange={this.update("genre")}>Custom</option>
                                     <option value="Alternative-Rock" onChange={this.update("genre")}>Alternative Rock</option>
                                     <option value="Ambient" onChange={this.update("genre")}>Ambient</option>

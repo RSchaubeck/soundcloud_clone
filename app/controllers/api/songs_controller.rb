@@ -28,6 +28,16 @@ class Api::SongsController < ApplicationController
         end  
     end
 
+    def update
+        @song = Song.find(params[:id])
+        @artist = User.find(@song.artist_id)
+        if @song.update(song_params)
+            render "api/songs/show"
+        else
+            render json: ["Could not find song"], status: 404
+        end
+    end
+
     def destroy
         @song = Song.find(params[:id])
         if @song
