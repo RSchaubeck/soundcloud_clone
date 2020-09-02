@@ -19,6 +19,7 @@ class Profile extends React.Component {
 
     componentWillMount() {
         this.props.fetchSongs();
+        this.props.fetchLikes();
     }
 
     handleClick(e) {
@@ -93,7 +94,7 @@ class Profile extends React.Component {
                         <div className="sidebar">
                                 <div className="user-stats">
                                     <p className="stats">Tracks<br /><span>{count}</span><br /></p>
-                                    <p className="stats">Liked tracks<br /><span>5</span><br /></p>
+                                    <p className="stats">Liked tracks<br /><span>{this.props.likes}</span><br /></p>
                                 </div>
                                 <div className="go-mobile">
                                 <p><a href="https://github.com/RSchaubeck" target="_blank">Github</a> - <a href="https://github.com/RSchaubeck" target="_blank">LinkedIn</a> - <a href="https://github.com/RSchaubeck" target="_blank">Angel List</a></p>                            

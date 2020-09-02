@@ -2,7 +2,7 @@ import * as SongAPIUtil from "../util/song_api_util";
 
 export const RECEIVE_SONG = "RECEIVE_SONG";
 export const RECEIVE_SONGS = "RECEIVE_SONGS";
-export const REMOVE_SONG = "REMOVE SONG";
+export const REMOVE_SONG = "REMOVE_SONG";
 export const UPDATE_SONG = "UPDATE_SONG";
 
 export const receiveSong = (song) => ({

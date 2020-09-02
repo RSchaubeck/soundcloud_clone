@@ -1,4 +1,4 @@
-import {RECEIVE_SONG, RECEIVE_SONGS, UPDATE_SONG, REMOVE_SONG} from '../actions/song_actions'
+import {RECEIVE_SONG, RECEIVE_SONGS, UPDATE_SONG, REMOVE_SONG, SEND_SONG} from '../actions/song_actions'
 
 const songReducer = (state={}, action) => {
     Object.freeze(state);

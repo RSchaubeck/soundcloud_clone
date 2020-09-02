@@ -43,6 +43,10 @@ class Discover extends React.Component {
         }
     }
 
+    songCount() {
+
+    }
+
     render() {
         let count = 0;
 
@@ -104,8 +108,8 @@ class Discover extends React.Component {
                         </div>
                         <div className=" discover-sidebar sidebar">
                             <div className="user-stats">
-                                <p className="stats">Tracks<br /><span>5</span><br /></p>
-                                <p className="stats">Liked tracks<br /><span>5</span><br /></p>
+                                <p className="stats">Tracks<br /><span>{this.props.count[0]}</span><br /></p>
+                                <p className="stats">Liked tracks<br /><span>{this.props.count[1]}</span><br /></p>
                             </div>
                             <div className="go-mobile">
                                 <p><a href="https://github.com/RSchaubeck" target="_blank">Github</a> - <a href="https://github.com/RSchaubeck" target="_blank">LinkedIn</a></p>

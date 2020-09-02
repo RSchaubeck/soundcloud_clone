@@ -6,12 +6,20 @@ import Discover from './discover';
 
 const mapStateToProps = ({ session, entities: { users, songs, likes } }) => {
     let songsCopy = Object.values(songs);
+    let likesCopy = Object.values(likes);
     let reversedSongs = songsCopy.reverse();
+    let songCount = songsCopy.filter(function(song) {
+        return song.artist_id === users[session.id].id
+    })
+    let likeCount = likesCopy.filter(function (like) {
+        return like.user_id === users[session.id].id
+    })
     return {
         currentUser: users[session.id],
         users: Object.values(users),
         songs: reversedSongs,
-        likes: Object.values(likes)
+        likes: likesCopy,
+        count: [songCount.length, likeCount.length]
     };
 };
 

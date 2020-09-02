@@ -32,13 +32,10 @@ class Navbar extends React.Component {
                     <div className="navbar-container" >
                         <div className="left-nav">
                             <NavLink to="/" className="logo"><i className="fab fa-mixcloud"></i></NavLink>
-                            <NavLink to="/" className="left-nav-links">Github</NavLink>
-                            <NavLink to="/" className="left-nav-links">LinkedIn</NavLink>
-                            <NavLink to="/" className="left-nav-links">Angel List</NavLink>
-                        </div>
-                        <div className="middle-nav">
-                            <input type="search" id="site-search" name="q" placeholder="Search" />
-                            <i className="fas fa-search"></i>
+                            <a href="https://github.com/RSchaubeck" target="_blank" className="left-nav-links">Github</a>
+                            <a href="https://www.linkedin.com/in/richard-schaubeck-1548b71b5/" target="_blank" className="left-nav-links">LinkedIn</a>
+                            <a href="https://angel.co/u/richard-schaubeck" target="_blank" className="left-nav-links">Angel List</a>
+                            <a href="https://rschaubeck.github.io/" target="_blank" className="left-nav-links">Personal Site</a>
                         </div>
                         <div className="right-nav">
                             <NavLink to={"/discover"} className={"nav-button links"}>Discover</NavLink>

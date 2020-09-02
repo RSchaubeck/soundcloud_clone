@@ -23,13 +23,6 @@
     display: flex;
  }
 
- .middle-nav {
-    display: flex;
-    height: 60%;
-    width: 410px;
-    align-self: center;
- }
-
  .right-nav{
     display: flex;
  }
@@ -126,9 +119,9 @@
 
 .logout-button {
     background: black;
-    top: 35px;
-    position: relative;
-    right: 70px;
+    top: 45px;
+    position: absolute;
+    right: 0px;
     border: 0;
     border-radius: 0;
  }

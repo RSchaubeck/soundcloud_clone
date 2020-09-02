@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom"
 import NavBar from '../navbar/navbar_container';
 import UploadBox from './upload_container';
+import {uploadSong} from '../../util/song_api_util'
 
 class UploadPage extends React.Component {
     constructor(props) {
@@ -13,9 +14,7 @@ class UploadPage extends React.Component {
             tags: "",
             status: "",
             songFile: null,
-            songUrl: "",
-            // photoFile: null,
-            // photoUrl: ""
+            songUrl: ""
         }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,13 +37,7 @@ class UploadPage extends React.Component {
             formData.append('song[song]', this.state.songFile);
         }
 
-        $.ajax({
-            url: '/api/songs',
-            method: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false
-        });
+        uploadSong(formData);
 
         this.props.history.push(`/users/${this.props.currentUser.id}`)
     }
@@ -63,21 +56,6 @@ class UploadPage extends React.Component {
             reader.readAsDataURL(file);
         } else {
             this.setState({ songUrl: "", songFile: null });
-        }
-    }
-
-    handleUploadPhoto(e) {
-        const reader = new FileReader();
-        const file = e.currentTarget.files[0];
-        reader.onloadend = () =>
-            this.setState({
-                songUrl: reader.result,
-                songFile: file,
-            });
-        if (file) {
-            reader.readAsDataURL(file);
-        } else {
-            this.setState({ photoUrl: "", photoFile: null });
         }
     }
 
