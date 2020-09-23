@@ -19,7 +19,6 @@ class UploadPage extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUploadSong = this.handleUploadSong.bind(this);
-    this.handleUploadPhoto = this.handleUploadPhoto.bind(this);
     this.update = this.update.bind(this);
     this.handleClick = this.handleClick.bind(this);
     }
