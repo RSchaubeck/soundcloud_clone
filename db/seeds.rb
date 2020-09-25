@@ -145,3 +145,7 @@ song21.photo.attach(io: photo21, filename: 'close-up-photography-of-microphone-1
 song22.photo.attach(io: photo22, filename: 'red-vinyl-record-3552948.jpg')
 song23.photo.attach(io: photo23, filename: 'woman-holding-vinyl-record-2272854.jpg')
 song24.photo.attach(io: photo24, filename: 'man-in-black-top-wearing-headphones-showing-his-tattoos-838696.jpg')
+
+like1 = Like.create(user_id: demo_user.id, song_id: song1.id)
+like2 = Like.create(user_id: demo_user.id, song_id: song17.id)
+like3 = Like.create(user_id: demo_user.id, song_id: song23.id)

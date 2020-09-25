@@ -74,12 +74,15 @@
     padding: 3px 10px 0 10px;
  }
 
- div a.clicked {
-    background-color: rgb(27, 27, 27);
-    border-radius: 0;
-    border-top: 5px solid rgb(27, 27, 27);
-    border-bottom: 5px solid rgb(27, 27, 27);
+ div a.clicked, div i.clicked {
+    background-color: black;
     color: white;
+ }
+
+ div i.clicked {
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    border-radius: 0;
  }
 
  .left-nav-links {
@@ -92,7 +95,6 @@
 
  i.fas {
     font-size: 16px;
-    padding-left: 15px;
  }
 
  div.right-nav .upgrade-link {
